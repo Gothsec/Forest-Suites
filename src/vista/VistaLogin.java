@@ -11,11 +11,9 @@ Version 2.0
 
 package vista;
 
-import controlador.ControladorLogin;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.*;
-import modelo.ModeloLogin;
 
 public class VistaLogin extends JFrame{
     
@@ -36,13 +34,13 @@ public class VistaLogin extends JFrame{
         
         createGUI();
         
-        System.out.println("User: admin \nPassword: 123"); // mostrar
+        System.out.println("User: admin \nPassword: 123");
         
         setVisible(true);
     }
     
     public void createGUI () {
-        ImageIcon imgIcon = new ImageIcon(getClass().getResource("../imgs/user-login.png"));
+        ImageIcon imgIcon = new ImageIcon(getClass().getResource("../imagenes/usuario.png"));
         
         labelTitulo = new JLabel("Forest-suites", imgIcon, JLabel.CENTER);
         labelTitulo.setOpaque(true);
@@ -71,13 +69,13 @@ public class VistaLogin extends JFrame{
         fieldPassword.setBounds(120, 140, 150, 30);
         add(fieldPassword);
         
-        imgVer = new ImageIcon(getClass().getResource("../imgs/ver.png"));
-        imgOcultar = new ImageIcon(getClass().getResource("../imgs/nover.png"));
+        imgVer = new ImageIcon(getClass().getResource("../imagenes/ver.png"));
+        imgOcultar = new ImageIcon(getClass().getResource("../imagenes/nover.png"));
         
         toggleVer = new JToggleButton(imgOcultar); 
-        toggleVer.setBorderPainted(false); // quitar el borde del boton
-        toggleVer.setContentAreaFilled(false); // quitar el color de fondo del boton   
-        toggleVer.setFocusPainted(false); // quitar el recuadro del foco del boton
+        toggleVer.setBorderPainted(false);
+        toggleVer.setContentAreaFilled(false);
+        toggleVer.setFocusPainted(false);
         toggleVer.setBounds(275, 140, 50, 30);
         add(toggleVer);
         
@@ -88,10 +86,5 @@ public class VistaLogin extends JFrame{
         buttonIngresar = new JButton("Ingresar");
         buttonIngresar.setBounds(205, 200, 150, 35);
         add(buttonIngresar);
-    }
-    
-    public static void main(String[] args) {
-        VistaLogin vista_login = new VistaLogin();
-        ModeloLogin modelo_login = new ModeloLogin();
     }
 }
