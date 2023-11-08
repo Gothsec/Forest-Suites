@@ -17,7 +17,7 @@ public class ControladorMenuPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // VistaCrear objVistaCrear = new VistaCrear();
-                objVistaMenu.setVisible(false);
+                obj_vista_menu.setVisible(false);
             }
         });
         
@@ -27,7 +27,7 @@ public class ControladorMenuPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // VistaConsulta objVistaConsulta = new VistaConsulta();
-                objVistaMenu.setVisible(false);
+                obj_vista_menu.setVisible(false);
             }
         });
         
@@ -37,7 +37,7 @@ public class ControladorMenuPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // VistaActualizar objVistaActualizar = new VistaActualizar();
-                objVistaMenu.setVisible(false);
+                obj_vista_menu.setVisible(false);
             }
         });
         
@@ -47,7 +47,7 @@ public class ControladorMenuPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // VistaEliminar objVistaEliminar = new VistaEliminar();
-                objVistaMenu.setVisible(false);
+                obj_vista_menu.setVisible(false);
             }
         });
         
@@ -57,7 +57,7 @@ public class ControladorMenuPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // VistaListados objVistaListados = new VistaListados();
-                objVistaMenu.setVisible(false);
+                obj_vista_menu.setVisible(false);
             }
         });
         
@@ -67,7 +67,7 @@ public class ControladorMenuPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // VistaEstadisticas objVistaEstadisticas = new VistaEstadisticas();
-                objVistaMenu.setVisible(false);
+                obj_vista_menu.setVisible(false);
             }
         });
         
@@ -77,7 +77,7 @@ public class ControladorMenuPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // VistaAcerca objVistaAcerca = new VistaAcerca();
-                objVistaMenu.setVisible(false);
+                obj_vista_menu.setVisible(false);
             }
         });
     }
