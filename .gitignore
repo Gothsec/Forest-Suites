@@ -30,3 +30,4 @@ replay_pid*
 nbproject/
 build.xml
 manifest.mf
+build/
