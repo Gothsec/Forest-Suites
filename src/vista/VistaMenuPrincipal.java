@@ -65,8 +65,9 @@ public class VistaMenuPrincipal extends JFrame{
     }
     
     public static void main(String[] args) {
-        VistaMenuPrincipal obj_vista_menu = new VistaMenuPrincipal();
-        ControladorMenuPrincipal obj_ontrolador_menu = new ControladorMenuPrincipal(obj_vista_menu);
+        VistaLogin vista_login = new VistaLogin();
+        ModeloLogin modelo_login = new ModeloLogin();
+        ControladorLogin control_login = new ControladorLogin(vista_login, modelo_login);
     }
 }
 
