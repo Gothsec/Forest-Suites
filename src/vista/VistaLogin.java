@@ -40,7 +40,7 @@ public class VistaLogin extends JFrame{
     }
     
     public void createGUI () {
-        ImageIcon imgIcon = new ImageIcon(getClass().getResource("../imagenes/usuario.png"));
+        ImageIcon imgIcon = new ImageIcon(getClass().getResource("../iconos/usuario.png"));
         
         labelTitulo = new JLabel("Forest-suites", imgIcon, JLabel.CENTER);
         labelTitulo.setOpaque(true);
@@ -69,8 +69,8 @@ public class VistaLogin extends JFrame{
         fieldPassword.setBounds(120, 140, 150, 30);
         add(fieldPassword);
         
-        imgVer = new ImageIcon(getClass().getResource("../imagenes/ver.png"));
-        imgOcultar = new ImageIcon(getClass().getResource("../imagenes/nover.png"));
+        imgVer = new ImageIcon(getClass().getResource("../iconos/ver.png"));
+        imgOcultar = new ImageIcon(getClass().getResource("../iconos/nover.png"));
         
         toggleVer = new JToggleButton(imgOcultar); 
         toggleVer.setBorderPainted(false);
