@@ -26,11 +26,11 @@
 hs_err_pid*
 replay_pid*
 
-# # xml
-# *.xml
+# xml
+*.xml
 
-# # Ignorar archivos generados por NetBeans
-# nbproject/
-# build.xml
-# manifest.mf
-# build/
+# Ignorar archivos generados por NetBeans
+nbproject/
+build.xml
+manifest.mf
+build/
