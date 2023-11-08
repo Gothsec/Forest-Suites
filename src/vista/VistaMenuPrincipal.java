@@ -1,10 +1,12 @@
 package vista;
 
+import controlador.ControladorLogin;
 import controlador.ControladorMenuPrincipal;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import modelo.ModeloLogin;
 
 public class VistaMenuPrincipal extends JFrame{
     

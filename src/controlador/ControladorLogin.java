@@ -16,20 +16,22 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import modelo.ModeloLogin;
 import vista.VistaLogin;
+import vista.VistaMenuPrincipal;
 
 public class ControladorLogin {
     public VistaLogin objeto_vista;
+    public ControladorMenuPrincipal obj_controlador;
 
     public ControladorLogin(VistaLogin objeto_vista, ModeloLogin modelo_login) {
         this.objeto_vista = objeto_vista;
-        objeto_vista.buttonIngresar.addActionListener(new IngresarListener());
-        objeto_vista.fieldLogin.addActionListener(new ActionListener() {
+        objeto_vista.boton_ingresar.addActionListener(new IngresarListener());
+        objeto_vista.campo_login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                objeto_vista.fieldPassword.requestFocus();
+                objeto_vista.campo_contrasena.requestFocus();
             }
         });
-        objeto_vista.fieldPassword.addActionListener(new ActionListener() {
+        objeto_vista.campo_contrasena.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 evento_validar();
@@ -46,8 +48,8 @@ public class ControladorLogin {
     }
 
     public void evento_validar() {
-        String login = objeto_vista.fieldLogin.getText();
-        char caracteres[] = objeto_vista.fieldPassword.getPassword();
+        String login = objeto_vista.campo_login.getText();
+        char caracteres[] = objeto_vista.campo_contrasena.getPassword();
         String passw = String.valueOf(caracteres);
         
 
@@ -56,7 +58,7 @@ public class ControladorLogin {
         } else {
             if (login.equals("admin") && passw.equals("123")) {
                 objeto_vista.setVisible(false);
-                //new MenuPrincipal().setVisible(true);
+                new VistaMenuPrincipal().setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(objeto_vista, "Ingreso incorrecto. Login y/o password incorrecto", "Error", JOptionPane.WARNING_MESSAGE);
             }
