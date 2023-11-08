@@ -1,1 +1,36 @@
+<<<<<<< HEAD
 /build/
+=======
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+replay_pid*
+
+# xml
+*.xml
+
+# Ignorar archivos generados por NetBeans
+nbproject/
+build.xml
+manifest.mf
+>>>>>>> 54e73b79e5ea32520925952ff9b56b781a3d67b2
