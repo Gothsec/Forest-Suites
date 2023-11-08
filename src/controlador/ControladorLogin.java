@@ -16,10 +16,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import modelo.ModeloLogin;
 import vista.VistaLogin;
-import vista.MenuPrincipal;
+import vista.VistaMenuPrincipal;
 
 public class ControladorLogin {
     public VistaLogin objeto_vista;
+    public ControladorMenuPrincipal obj_controlador;
 
     public ControladorLogin(VistaLogin objeto_vista, ModeloLogin modelo_login) {
         this.objeto_vista = objeto_vista;
@@ -57,7 +58,7 @@ public class ControladorLogin {
         } else {
             if (login.equals("admin") && passw.equals("123")) {
                 objeto_vista.setVisible(false);
-                new MenuPrincipal().setVisible(true);
+                new VistaMenuPrincipal().setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(objeto_vista, "Ingreso incorrecto. Login y/o password incorrecto", "Error", JOptionPane.WARNING_MESSAGE);
             }

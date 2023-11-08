@@ -1,10 +1,12 @@
 package vista;
 
+import controlador.ControladorLogin;
 import controlador.ControladorMenuPrincipal;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import modelo.ModeloLogin;
 
 public class VistaMenuPrincipal extends JFrame{
     
@@ -63,8 +65,11 @@ public class VistaMenuPrincipal extends JFrame{
     }
     
     public static void main(String[] args) {
-        VistaMenuPrincipal objVistaMenu = new VistaMenuPrincipal();
-        ControladorMenuPrincipal objControladorMenu = new ControladorMenuPrincipal(objVistaMenu);
+        VistaLogin vistaLogin = new VistaLogin();
+        ModeloLogin modeloLogin = new ModeloLogin();
+        ControladorLogin controladorlogin = new ControladorLogin(vistaLogin, modeloLogin);
+        //VistaMenuPrincipal objVistaMenu = new VistaMenuPrincipal();
+        //ControladorMenuPrincipal objControladorMenu = new ControladorMenuPrincipal(objVistaMenu);
     }
 }
 

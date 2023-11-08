@@ -42,9 +42,9 @@ public class VistaLogin extends JFrame{
     }
     
     public void GUI () {
-        ImageIcon imgIcon = new ImageIcon(getClass().getResource("../iconos/usuario.png"));
+        ImageIcon icono = new ImageIcon(getClass().getResource("/iconos/usuario.png"));
         
-        etiqueta_titulo = new JLabel("Forest-suites", imgIcon, JLabel.CENTER);
+        etiqueta_titulo = new JLabel("Forest-suites", icono, JLabel.CENTER);
         etiqueta_titulo.setOpaque(true);
         etiqueta_titulo.setBackground(Color.WHITE);
         etiqueta_titulo.setHorizontalAlignment(JLabel.CENTER);
@@ -71,8 +71,8 @@ public class VistaLogin extends JFrame{
         campo_contrasena.setBounds(120, 140, 150, 30);
         add(campo_contrasena);
         
-        imagen_ver = new ImageIcon(getClass().getResource("../iconos/ver.png"));
-        imagen_ocultar = new ImageIcon(getClass().getResource("../iconos/nover.png"));
+        imagen_ver = new ImageIcon(getClass().getResource("/iconos/ver.png"));
+        imagen_ocultar = new ImageIcon(getClass().getResource("/iconos/nover.png"));
         
         cambio_ver = new JToggleButton(imagen_ocultar); 
         cambio_ver.setBorderPainted(false);
@@ -94,10 +94,5 @@ public class VistaLogin extends JFrame{
         boton_ingresar.setBackground(Color.white);
         boton_ingresar.setForeground(Color.GRAY);
         add(boton_ingresar);
-    }
-        public static void main(String[] args) {
-        VistaLogin vistaLogin = new VistaLogin();
-        ModeloLogin modeloLogin = new ModeloLogin();
-        ControladorLogin controladorlogin = new ControladorLogin(vistaLogin, modeloLogin);
     }
 }
