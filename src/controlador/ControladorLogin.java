@@ -38,7 +38,6 @@ public class ControladorLogin {
             }
         });
     }
-    
 
     class IngresarListener implements ActionListener {
         @Override
