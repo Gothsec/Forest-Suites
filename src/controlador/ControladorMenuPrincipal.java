@@ -11,7 +11,7 @@ public class ControladorMenuPrincipal {
     public ControladorMenuPrincipal (VistaMenuPrincipal objVistaMenu) {
         this.objVistaMenu = objVistaMenu;
         
-        // Crear
+        // Acceder a Crear
         objVistaMenu.botonCrear.addActionListener(new ActionListener() {
         
             @Override
@@ -21,7 +21,7 @@ public class ControladorMenuPrincipal {
             }
         });
         
-        // Consulta
+        // Acceder a Consulta
         objVistaMenu.botonConsulta.addActionListener(new ActionListener() {
         
             @Override
@@ -31,7 +31,7 @@ public class ControladorMenuPrincipal {
             }
         });
         
-        // Actualizar
+        // Acceder a Actualizar
         objVistaMenu.botonActualizar.addActionListener(new ActionListener() {
         
             @Override
@@ -41,7 +41,7 @@ public class ControladorMenuPrincipal {
             }
         });
         
-        // Eliminar
+        // Acceder a Eliminar
         objVistaMenu.botonEliminar.addActionListener(new ActionListener() {
         
             @Override
@@ -51,7 +51,7 @@ public class ControladorMenuPrincipal {
             }
         });
         
-        // Listados
+        // Acceder a Listados
         objVistaMenu.botonListados.addActionListener(new ActionListener() {
         
             @Override
@@ -61,7 +61,7 @@ public class ControladorMenuPrincipal {
             }
         });
         
-        // Estadisticas
+        // Acceder a Estadisticas
         objVistaMenu.botonEstadisticas.addActionListener(new ActionListener() {
         
             @Override
@@ -71,7 +71,7 @@ public class ControladorMenuPrincipal {
             }
         });
         
-        // Acerca
+        // Acceder a Acerca
         objVistaMenu.botonAcerca.addActionListener(new ActionListener() {
         
             @Override

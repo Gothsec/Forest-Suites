@@ -24,6 +24,8 @@ public class VistaMenuPrincipal extends JFrame{
     }
     
     public void crearGUI() {
+        // Coordenada x = 95 porque en 100 no se veia centrado :l
+        
         labelTitulo = new JLabel("Forest Suites");
         labelTitulo.setBounds(95, 30, 200, 40);
         labelTitulo.setFont(new Font("Tahoma", Font.BOLD, 30));
