@@ -19,7 +19,7 @@ public class VistaLogin extends JFrame{
     
     public JTextField campo_login;
     public JPasswordField campo_contrasena;
-    public JToggleButton cambio_ver; // para ver u ocultar el password
+    public JToggleButton cambio_ver;
     public JButton boton_cancelar, boton_ingresar;
     public ImageIcon imagen_ver, imagen_ocultar;
     JLabel etiqueta_titulo, etiqueta_login;
@@ -32,15 +32,15 @@ public class VistaLogin extends JFrame{
         setLayout(null);
         setResizable(false);
         
-        createGUI();
+        GUI();
         
         System.out.println("User: admin \nPassword: 123");
         
         setVisible(true);
     }
     
-    public void createGUI () {
-        ImageIcon imgIcon = new ImageIcon(getClass().getResource("../imagenes/usuario.png"));
+    public void GUI () {
+        ImageIcon imgIcon = new ImageIcon(getClass().getResource("../iconos/usuario.png"));
         
         etiqueta_titulo = new JLabel("Forest-suites", imgIcon, JLabel.CENTER);
         etiqueta_titulo.setOpaque(true);
@@ -69,8 +69,8 @@ public class VistaLogin extends JFrame{
         campo_contrasena.setBounds(120, 140, 150, 30);
         add(campo_contrasena);
         
-        imagen_ver = new ImageIcon(getClass().getResource("../imagenes/ver.png"));
-        imagen_ocultar = new ImageIcon(getClass().getResource("../imagenes/nover.png"));
+        imagen_ver = new ImageIcon(getClass().getResource("../iconos/ver.png"));
+        imagen_ocultar = new ImageIcon(getClass().getResource("../iconos/nover.png"));
         
         cambio_ver = new JToggleButton(imagen_ocultar); 
         cambio_ver.setBorderPainted(false);
@@ -81,13 +81,16 @@ public class VistaLogin extends JFrame{
         
         boton_cancelar = new JButton("Cancelar");
         boton_cancelar.setBounds(45, 200, 150, 35);
+        boton_cancelar.setBorder(BorderFactory.createLineBorder(Color.black, 2));
+        boton_cancelar.setBackground(Color.white);
+        boton_cancelar.setForeground(Color.GRAY);
         add(boton_cancelar);
         
         boton_ingresar = new JButton("Ingresar");
         boton_ingresar.setBounds(205, 200, 150, 35);
         boton_ingresar.setBorder(BorderFactory.createLineBorder(Color.black, 2));
         boton_ingresar.setBackground(Color.white);
-        boton_ingresar.setForeground(Color.black);
+        boton_ingresar.setForeground(Color.GRAY);
         add(boton_ingresar);
     }
 }
