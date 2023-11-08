@@ -11,9 +11,11 @@ Version 2.0
 
 package vista;
 
+import controlador.ControladorLogin;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.*;
+import modelo.ModeloLogin;
 
 public class VistaLogin extends JFrame{
     
@@ -92,5 +94,10 @@ public class VistaLogin extends JFrame{
         boton_ingresar.setBackground(Color.white);
         boton_ingresar.setForeground(Color.GRAY);
         add(boton_ingresar);
+    }
+        public static void main(String[] args) {
+        VistaLogin vistaLogin = new VistaLogin();
+        ModeloLogin modeloLogin = new ModeloLogin();
+        ControladorLogin controladorlogin = new ControladorLogin(vistaLogin, modeloLogin);
     }
 }
