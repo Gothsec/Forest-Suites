@@ -85,6 +85,9 @@ public class VistaLogin extends JFrame{
         
         boton_ingresar = new JButton("Ingresar");
         boton_ingresar.setBounds(205, 200, 150, 35);
+        boton_ingresar.setBorder(BorderFactory.createLineBorder(Color.black, 2));
+        boton_ingresar.setBackground(Color.white);
+        boton_ingresar.setForeground(Color.black);
         add(boton_ingresar);
     }
 }
