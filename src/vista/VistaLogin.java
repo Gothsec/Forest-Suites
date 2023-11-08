@@ -17,12 +17,12 @@ import javax.swing.*;
 
 public class VistaLogin extends JFrame{
     
-    public JTextField fieldLogin;
-    public JPasswordField fieldPassword;
-    public JToggleButton toggleVer; // para ver u ocultar el password
-    public JButton buttonCancelar, buttonIngresar;
-    public ImageIcon imgVer, imgOcultar;
-    JLabel labelTitulo, labelLogin;
+    public JTextField campo_login;
+    public JPasswordField campo_contrasena;
+    public JToggleButton cambio_ver; // para ver u ocultar el password
+    public JButton boton_cancelar, boton_ingresar;
+    public ImageIcon imagen_ver, imagen_ocultar;
+    JLabel etiqueta_titulo, etiqueta_login;
     
     public VistaLogin(){
         super("Inicio de sesion"); 
@@ -42,49 +42,49 @@ public class VistaLogin extends JFrame{
     public void createGUI () {
         ImageIcon imgIcon = new ImageIcon(getClass().getResource("../imagenes/usuario.png"));
         
-        labelTitulo = new JLabel("Forest-suites", imgIcon, JLabel.CENTER);
-        labelTitulo.setOpaque(true);
-        labelTitulo.setBackground(Color.WHITE);
-        labelTitulo.setHorizontalAlignment(JLabel.CENTER);
-        labelTitulo.setFont(new Font("Tahoma", Font.BOLD, 25));
-        labelTitulo.setBounds(0, 0, 400, 75);
-        add(labelTitulo);
+        etiqueta_titulo = new JLabel("Forest-suites", imgIcon, JLabel.CENTER);
+        etiqueta_titulo.setOpaque(true);
+        etiqueta_titulo.setBackground(Color.WHITE);
+        etiqueta_titulo.setHorizontalAlignment(JLabel.CENTER);
+        etiqueta_titulo.setFont(new Font("Tahoma", Font.BOLD, 25));
+        etiqueta_titulo.setBounds(0, 0, 400, 75);
+        add(etiqueta_titulo);
         
-        labelLogin = new JLabel("Usuario");
-        labelLogin.setHorizontalAlignment(JLabel.RIGHT);
-        labelLogin.setBounds(10, 90, 100, 30);
-        add(labelLogin);
+        etiqueta_login = new JLabel("Usuario");
+        etiqueta_login.setHorizontalAlignment(JLabel.RIGHT);
+        etiqueta_login.setBounds(10, 90, 100, 30);
+        add(etiqueta_login);
         
         JLabel labelPass = new JLabel("Contraseña");
         labelPass.setBounds(10, 140, 100, 30);
         labelPass.setHorizontalAlignment(JLabel.RIGHT);
         add(labelPass);
         
-        fieldLogin = new JTextField();
-        fieldLogin.setBounds(120, 90, 150, 30);
-        add(fieldLogin);
+        campo_login = new JTextField();
+        campo_login.setBounds(120, 90, 150, 30);
+        add(campo_login);
         
-        fieldPassword = new JPasswordField();
-        fieldPassword.setEchoChar('•');
-        fieldPassword.setBounds(120, 140, 150, 30);
-        add(fieldPassword);
+        campo_contrasena = new JPasswordField();
+        campo_contrasena.setEchoChar('•');
+        campo_contrasena.setBounds(120, 140, 150, 30);
+        add(campo_contrasena);
         
-        imgVer = new ImageIcon(getClass().getResource("../imagenes/ver.png"));
-        imgOcultar = new ImageIcon(getClass().getResource("../imagenes/nover.png"));
+        imagen_ver = new ImageIcon(getClass().getResource("../imagenes/ver.png"));
+        imagen_ocultar = new ImageIcon(getClass().getResource("../imagenes/nover.png"));
         
-        toggleVer = new JToggleButton(imgOcultar); 
-        toggleVer.setBorderPainted(false);
-        toggleVer.setContentAreaFilled(false);
-        toggleVer.setFocusPainted(false);
-        toggleVer.setBounds(275, 140, 50, 30);
-        add(toggleVer);
+        cambio_ver = new JToggleButton(imagen_ocultar); 
+        cambio_ver.setBorderPainted(false);
+        cambio_ver.setContentAreaFilled(false);
+        cambio_ver.setFocusPainted(false);
+        cambio_ver.setBounds(275, 140, 50, 30);
+        add(cambio_ver);
         
-        buttonCancelar = new JButton("Cancelar");
-        buttonCancelar.setBounds(45, 200, 150, 35);
-        add(buttonCancelar);
+        boton_cancelar = new JButton("Cancelar");
+        boton_cancelar.setBounds(45, 200, 150, 35);
+        add(boton_cancelar);
         
-        buttonIngresar = new JButton("Ingresar");
-        buttonIngresar.setBounds(205, 200, 150, 35);
-        add(buttonIngresar);
+        boton_ingresar = new JButton("Ingresar");
+        boton_ingresar.setBounds(205, 200, 150, 35);
+        add(boton_ingresar);
     }
 }
