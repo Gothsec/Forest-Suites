@@ -8,8 +8,8 @@ import javax.swing.JLabel;
 
 public class VistaMenuPrincipal extends JFrame{
     
-    public JLabel labelTitulo;
-    public JButton botonCrear, botonConsulta, botonActualizar, botonEliminar, botonListados, botonEstadisticas, botonAcerca;
+    public JLabel label_titulo;
+    public JButton boton_crear, boton_consulta, boton_actualizar, boton_eliminar, boton_listados, boton_estadisticas, boton_acerca;
     
     public VistaMenuPrincipal () {
         super("Forest Suites");
@@ -26,45 +26,45 @@ public class VistaMenuPrincipal extends JFrame{
     public void crearGUI() {
         // Coordenada x = 95 porque en 100 no se veia centrado :l
         
-        labelTitulo = new JLabel("Forest Suites");
-        labelTitulo.setBounds(95, 30, 200, 40);
-        labelTitulo.setFont(new Font("Tahoma", Font.BOLD, 30));
-        add(labelTitulo);
+        label_titulo = new JLabel("Forest Suites");
+        label_titulo.setBounds(95, 30, 200, 40);
+        label_titulo.setFont(new Font("Tahoma", Font.BOLD, 30));
+        add(label_titulo);
         
         // Distancia entre elementos = 60
         
-        botonCrear = new JButton("Crear");
-        botonCrear.setBounds(95, 90, 200, 40);
-        add(botonCrear);
+        boton_crear = new JButton("Crear");
+        boton_crear.setBounds(95, 90, 200, 40);
+        add(boton_crear);
         
-        botonConsulta = new JButton("Consultar");
-        botonConsulta.setBounds(95, 150, 200, 40);
-        add(botonConsulta);
+        boton_consulta = new JButton("Consultar");
+        boton_consulta.setBounds(95, 150, 200, 40);
+        add(boton_consulta);
         
-        botonActualizar = new JButton("Actualizar");
-        botonActualizar.setBounds(95, 210, 200, 40);
-        add(botonActualizar);
+        boton_actualizar = new JButton("Actualizar");
+        boton_actualizar.setBounds(95, 210, 200, 40);
+        add(boton_actualizar);
         
-        botonEliminar = new JButton("Eliminar");
-        botonEliminar.setBounds(95, 270, 200, 40);
-        add(botonEliminar);
+        boton_eliminar = new JButton("Eliminar");
+        boton_eliminar.setBounds(95, 270, 200, 40);
+        add(boton_eliminar);
         
-        botonListados = new JButton("Listados");
-        botonListados.setBounds(95, 330, 200, 40);
-        add(botonListados);
+        boton_listados = new JButton("Listados");
+        boton_listados.setBounds(95, 330, 200, 40);
+        add(boton_listados);
         
-        botonEstadisticas = new JButton("Estadisticas");
-        botonEstadisticas.setBounds(95, 390, 200, 40);
-        add(botonEstadisticas);
+        boton_estadisticas = new JButton("Estadisticas");
+        boton_estadisticas.setBounds(95, 390, 200, 40);
+        add(boton_estadisticas);
         
-        botonAcerca = new JButton("Acerca");
-        botonAcerca.setBounds(95, 450, 200, 40);
-        add(botonAcerca);
+        boton_acerca = new JButton("Acerca");
+        boton_acerca.setBounds(95, 450, 200, 40);
+        add(boton_acerca);
     }
     
     public static void main(String[] args) {
-        VistaMenuPrincipal objVistaMenu = new VistaMenuPrincipal();
-        ControladorMenuPrincipal objControladorMenu = new ControladorMenuPrincipal(objVistaMenu);
+        VistaMenuPrincipal obj_vista_menu = new VistaMenuPrincipal();
+        ControladorMenuPrincipal obj_ontrolador_menu = new ControladorMenuPrincipal(obj_vista_menu);
     }
 }
 

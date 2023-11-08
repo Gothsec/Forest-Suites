@@ -6,13 +6,13 @@ import vista.VistaMenuPrincipal;
 
 public class ControladorMenuPrincipal {
     
-    VistaMenuPrincipal objVistaMenu;
+    VistaMenuPrincipal obj_vista_menu;
     
     public ControladorMenuPrincipal (VistaMenuPrincipal objVistaMenu) {
-        this.objVistaMenu = objVistaMenu;
+        this.obj_vista_menu = obj_vista_menu;
         
         // Acceder a Crear
-        objVistaMenu.botonCrear.addActionListener(new ActionListener() {
+        objVistaMenu.boton_crear.addActionListener(new ActionListener() {
         
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -22,7 +22,7 @@ public class ControladorMenuPrincipal {
         });
         
         // Acceder a Consulta
-        objVistaMenu.botonConsulta.addActionListener(new ActionListener() {
+        objVistaMenu.boton_consulta.addActionListener(new ActionListener() {
         
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -32,7 +32,7 @@ public class ControladorMenuPrincipal {
         });
         
         // Acceder a Actualizar
-        objVistaMenu.botonActualizar.addActionListener(new ActionListener() {
+        objVistaMenu.boton_actualizar.addActionListener(new ActionListener() {
         
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -42,7 +42,7 @@ public class ControladorMenuPrincipal {
         });
         
         // Acceder a Eliminar
-        objVistaMenu.botonEliminar.addActionListener(new ActionListener() {
+        objVistaMenu.boton_eliminar.addActionListener(new ActionListener() {
         
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -52,7 +52,7 @@ public class ControladorMenuPrincipal {
         });
         
         // Acceder a Listados
-        objVistaMenu.botonListados.addActionListener(new ActionListener() {
+        objVistaMenu.boton_listados.addActionListener(new ActionListener() {
         
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -62,7 +62,7 @@ public class ControladorMenuPrincipal {
         });
         
         // Acceder a Estadisticas
-        objVistaMenu.botonEstadisticas.addActionListener(new ActionListener() {
+        objVistaMenu.boton_estadisticas.addActionListener(new ActionListener() {
         
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -72,7 +72,7 @@ public class ControladorMenuPrincipal {
         });
         
         // Acceder a Acerca
-        objVistaMenu.botonAcerca.addActionListener(new ActionListener() {
+        objVistaMenu.boton_acerca.addActionListener(new ActionListener() {
         
             @Override
             public void actionPerformed(ActionEvent e) {
