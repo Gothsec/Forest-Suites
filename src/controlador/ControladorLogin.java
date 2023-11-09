@@ -74,7 +74,9 @@ public class ControladorLogin {
         } else {
             if (login.equals("admin") && passw.equals("123")) {
                 objeto_vista.setVisible(false);
-                new VistaMenuPrincipal().setVisible(true);
+                VistaMenuPrincipal obj_vista_menu = new VistaMenuPrincipal();
+                ControladorMenuPrincipal controlador = new ControladorMenuPrincipal(obj_vista_menu);
+                obj_vista_menu.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(objeto_vista, "Ingreso incorrecto. Login y/o password incorrecto", "Error", JOptionPane.WARNING_MESSAGE);
             }
