@@ -43,8 +43,8 @@ public class VistaLogin extends JFrame{
     
 
     public void GUI () {
-        ImageIcon icono, imagen_ver, imagen_ocultar;
-        icono = new ImageIcon(getClass().getResource("../iconos/usuario.png"));
+        ImageIcon icono;
+        icono = new ImageIcon(getClass().getResource("../iconos/usuario1.png"));
         
         etiqueta_titulo = new JLabel("Forest-suites", icono, JLabel.CENTER);
         etiqueta_titulo.setOpaque(true);
@@ -73,8 +73,8 @@ public class VistaLogin extends JFrame{
         campo_contrasena.setBounds(120, 140, 150, 30);
         add(campo_contrasena);
         
-        imagen_ver = new ImageIcon(getClass().getResource("../iconos/ver.png"));
-        imagen_ocultar = new ImageIcon(getClass().getResource("../iconos/nover.png"));
+        imagen_ver = new ImageIcon(getClass().getResource("../iconos/ver1.png"));
+        imagen_ocultar = new ImageIcon(getClass().getResource("../iconos/nover1.png"));
 
         cambio_ver = new JToggleButton(imagen_ocultar); 
         cambio_ver.setBorderPainted(false);
@@ -85,16 +85,14 @@ public class VistaLogin extends JFrame{
         
         boton_cancelar = new JButton("Cancelar");
         boton_cancelar.setBounds(45, 200, 150, 35);
-        boton_cancelar.setBorder(BorderFactory.createLineBorder(Color.black, 2));
-        boton_cancelar.setBackground(Color.white);
-        boton_cancelar.setForeground(Color.GRAY);
+        boton_cancelar.setBackground(Color.darkGray);
+        boton_cancelar.setForeground(Color.white);
         add(boton_cancelar);
         
         boton_ingresar = new JButton("Ingresar");
         boton_ingresar.setBounds(205, 200, 150, 35);
-        boton_ingresar.setBorder(BorderFactory.createLineBorder(Color.black, 2));
-        boton_ingresar.setBackground(Color.white);
-        boton_ingresar.setForeground(Color.GRAY);
+        boton_ingresar.setBackground(Color.darkGray);
+        boton_ingresar.setForeground(Color.white);
         add(boton_ingresar);
     }
 }
