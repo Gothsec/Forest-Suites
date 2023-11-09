@@ -3,21 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/garav/Desktop/Forest-Suites/src/vista/VistaActualizar.java</file>
-            <file>file:/C:/Users/garav/Desktop/Forest-Suites/src/vista/VistaMenuPrincipal.java</file>
-            <file>file:/C:/Users/garav/Desktop/Forest-Suites/src/controlador/ControladorMenuPrincipal.java</file>
-            <file>file:/C:/Users/garav/Desktop/Forest-Suites/src/controlador/ControladorEliminar.java</file>
-            <file>file:/C:/Users/garav/Desktop/Forest-Suites/src/controlador/ControladorActualizar.java</file>
-            <file>file:/C:/Users/garav/Desktop/Forest-Suites/src/vista/VistaConsulta.java</file>
-            <file>file:/C:/Users/garav/Desktop/Forest-Suites/src/vista/VistaEliminar.java</file>
-=======
             <file>file:/C:/Users/Oscar/OneDrive/Escritorio/Forest-Suites/src/controlador/ControladorLogin.java</file>
             <file>file:/C:/Users/Oscar/OneDrive/Escritorio/Forest-Suites/src/modelo/ModeloLogin.java</file>
             <file>file:/C:/Users/Oscar/OneDrive/Escritorio/Forest-Suites/src/vista/VistaMenuPrincipal.java</file>
             <file>file:/C:/Users/Oscar/OneDrive/Escritorio/Forest-Suites/src/vista/VistaLogin.java</file>
             <file>file:/C:/Users/Oscar/OneDrive/Escritorio/Forest-Suites/src/controlador/ControladorMenuPrincipal.java</file>
->>>>>>> 53724aef02cb1707213238ef31d22700d75f5bdd
         </group>
     </open-files>
 </project-private>

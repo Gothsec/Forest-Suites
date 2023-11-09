@@ -49,10 +49,14 @@ public class VistaAcerca extends JFrame {
         
         // Panel Alejo
         
+        // Contenedor principal, ordenada los elementos verticalmente
+        
         panel_alejo = new JPanel();
         panel_alejo.setLayout(new BoxLayout(panel_alejo, BoxLayout.X_AXIS));
         //panel_alejo.setBackground(Color.red);
         panel_alejo.setBounds(50, 100, 340, 100);
+        
+        // Subpanel que sirve para agrupar la informacion y ordenarla verticalmente
         
         subpanel_alejo = new JPanel();
         subpanel_alejo.setLayout(new BoxLayout(subpanel_alejo, BoxLayout.Y_AXIS));
@@ -93,9 +97,13 @@ public class VistaAcerca extends JFrame {
         
         // Panel Oscar
         
+        // Contenedor principal, ordenada los elementos verticalmente
+        
         panel_oscar = new JPanel();
         panel_oscar.setLayout(new BoxLayout(panel_oscar, BoxLayout.X_AXIS));
         panel_oscar.setBounds(50, 200, 340, 100);
+        
+        // Subpanel que sirve para agrupar la informacion y ordenarla verticalmente
         
         subpanel_oscar = new JPanel();
         subpanel_oscar.setLayout(new BoxLayout(subpanel_oscar, BoxLayout.Y_AXIS));
@@ -134,9 +142,13 @@ public class VistaAcerca extends JFrame {
         
         // Panel Camilo
         
+        // Contenedor principal, ordenada los elementos verticalmente
+        
         panel_camilo = new JPanel();
         panel_camilo.setLayout(new BoxLayout(panel_camilo, BoxLayout.X_AXIS));
         panel_camilo.setBounds(50, 300, 340, 100);
+        
+        // Subpanel que sirve para agrupar la informacion y ordenarla verticalmente
         
         subpanel_camilo = new JPanel();
         subpanel_camilo.setLayout(new BoxLayout(subpanel_camilo, BoxLayout.Y_AXIS));
