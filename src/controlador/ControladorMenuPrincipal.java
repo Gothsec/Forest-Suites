@@ -2,7 +2,10 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import vista.VistaAcerca;
+import vista.VistaActualizar;
 import vista.VistaConsulta;
+import vista.VistaEliminar;
 import vista.VistaMenuPrincipal;
 
 public class ControladorMenuPrincipal {
@@ -17,7 +20,7 @@ public class ControladorMenuPrincipal {
         
             @Override
             public void actionPerformed(ActionEvent e) {
-                // VistaCrear objVistaCrear = new VistaCrear();
+                // VistaCrear obj_vista_crear = new VistaCrear();
                 obj_vista_menu.setVisible(false);
             }
         });
@@ -28,7 +31,8 @@ public class ControladorMenuPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 obj_vista_menu.setVisible(false);
-                VistaConsulta obj_vista_onsulta = new VistaConsulta();
+                VistaConsulta obj_vista_consulta = new VistaConsulta();
+                ControladorConsulta obj_controlador_consulta = new ControladorConsulta(obj_vista_menu, obj_vista_consulta);
             }
         });
         
@@ -37,7 +41,8 @@ public class ControladorMenuPrincipal {
         
             @Override
             public void actionPerformed(ActionEvent e) {
-                // VistaActualizar objVistaActualizar = new VistaActualizar();
+                VistaActualizar obj_vista_actualizar = new VistaActualizar();
+                ControladorActualizar obj_controlador_actualizar = new ControladorActualizar(obj_vista_menu, obj_vista_actualizar);
                 obj_vista_menu.setVisible(false);
             }
         });
@@ -47,7 +52,8 @@ public class ControladorMenuPrincipal {
         
             @Override
             public void actionPerformed(ActionEvent e) {
-                // VistaEliminar objVistaEliminar = new VistaEliminar();
+                VistaEliminar obj_vista_eliminar = new VistaEliminar();
+                ControladorEliminar obj_controlador_eliminar = new ControladorEliminar(obj_vista_menu, obj_vista_eliminar);
                 obj_vista_menu.setVisible(false);
             }
         });
@@ -57,7 +63,7 @@ public class ControladorMenuPrincipal {
         
             @Override
             public void actionPerformed(ActionEvent e) {
-                // VistaListados objVistaListados = new VistaListados();
+                // VistaListados obj_vista_listados = new VistaListados();
                 obj_vista_menu.setVisible(false);
             }
         });
@@ -67,7 +73,7 @@ public class ControladorMenuPrincipal {
         
             @Override
             public void actionPerformed(ActionEvent e) {
-                // VistaEstadisticas objVistaEstadisticas = new VistaEstadisticas();
+                // VistaEstadisticas obj_vista_estadisticas = new VistaEstadisticas();
                 obj_vista_menu.setVisible(false);
             }
         });
@@ -77,7 +83,8 @@ public class ControladorMenuPrincipal {
         
             @Override
             public void actionPerformed(ActionEvent e) {
-                // VistaAcerca objVistaAcerca = new VistaAcerca();
+                VistaAcerca obj_vista_acerca = new VistaAcerca();
+                ControladorAcerca obj_controlador_acerca = new ControladorAcerca(obj_vista_menu, obj_vista_acerca);
                 obj_vista_menu.setVisible(false);
             }
         });
