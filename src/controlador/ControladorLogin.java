@@ -1,18 +1,8 @@
-/* Forest Suites es una app hecha en Java para la gestion de
-reservas en un hotel, con opciones de crear, modificar y buscar.
-
-Oscar Andres Hernandez Pineda - 2264488
-Camilo Andres Garcia - 2264484
-Alejandro Cuenca - 22644755
-
-Ult. fecha modificacion: 20/10/2023
-Version 2.0
-*/
-
 package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.Icon;
 import javax.swing.JOptionPane;
 import modelo.ModeloLogin;
 import vista.VistaLogin;
@@ -25,6 +15,7 @@ public class ControladorLogin {
     public ControladorLogin(VistaLogin objeto_vista, ModeloLogin modelo_login) {
         this.objeto_vista = objeto_vista;
         objeto_vista.boton_ingresar.addActionListener(new IngresarListener());
+        objeto_vista.boton_cancelar.addActionListener(new CancelarListener());
         objeto_vista.campo_login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -37,22 +28,48 @@ public class ControladorLogin {
                 evento_validar();
             }
         });
+        
+        // Agregar el controlador al JToggleButton cambio_ver
+        objeto_vista.cambio_ver.addActionListener(new ToggleButtonListener());
     }
-
+    
     class IngresarListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             evento_validar();
         }
     }
+    
+    class CancelarListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            objeto_vista.dispose();
+            System.exit(0);
+        }
+    }
+    
+    class ToggleButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (objeto_vista.cambio_ver.isSelected()) {
+                objeto_vista.cambio_ver.setIcon(objeto_vista.imagen_ver); // Cambia a la imagen "imagen_ver"
+                objeto_vista.campo_contrasena.setEchoChar((char) 0); // Mostrar contraseña
+            } else {
+                objeto_vista.cambio_ver.setIcon(objeto_vista.imagen_ocultar); // Cambia a la imagen "imagen_ocultar"
+                objeto_vista.campo_contrasena.setEchoChar('•'); // Ocultar contraseña
+            }
+        }
+    }
+
 
     public void evento_validar() {
         String login = objeto_vista.campo_login.getText();
         char caracteres[] = objeto_vista.campo_contrasena.getPassword();
         String passw = String.valueOf(caracteres);
-        
 
-        if (login.equals("") || passw.equals("")) {
+        if (login.equals
+        ("") || passw.equals("")) {
             JOptionPane.showMessageDialog(objeto_vista, "Login y/o password no pueden ser vacíos");
         } else {
             if (login.equals("admin") && passw.equals("123")) {
