@@ -43,7 +43,7 @@ public class VistaLogin extends JFrame{
     
 
     public void GUI () {
-        ImageIcon icono, imagen_ver, imagen_ocultar;
+        ImageIcon icono;
         icono = new ImageIcon(getClass().getResource("../iconos/usuario1.png"));
         
         etiqueta_titulo = new JLabel("Forest-suites", icono, JLabel.CENTER);
