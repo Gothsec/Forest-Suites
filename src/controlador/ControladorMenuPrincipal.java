@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import vista.VistaAcerca;
 import vista.VistaActualizar;
 import vista.VistaConsulta;
+import vista.VistaCrear;
 import vista.VistaEliminar;
 import vista.VistaMenuPrincipal;
 
@@ -20,7 +21,8 @@ public class ControladorMenuPrincipal {
         
             @Override
             public void actionPerformed(ActionEvent e) {
-                // VistaCrear obj_vista_crear = new VistaCrear();
+                VistaCrear obj_vista_crear = new VistaCrear();
+                ControladorCrear obj_crear = new ControladorCrear(obj_vista_menu, obj_vista_crear);
                 obj_vista_menu.setVisible(false);
             }
         });
