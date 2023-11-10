@@ -7,6 +7,7 @@ import vista.VistaActualizar;
 import vista.VistaConsulta;
 import vista.VistaCrear;
 import vista.VistaEliminar;
+import vista.VistaEstadisticas;
 import vista.VistaMenuPrincipal;
 
 public class ControladorMenuPrincipal {
@@ -75,7 +76,7 @@ public class ControladorMenuPrincipal {
         
             @Override
             public void actionPerformed(ActionEvent e) {
-                // VistaEstadisticas obj_vista_estadisticas = new VistaEstadisticas();
+                VistaEstadisticas obj_vista_estadisticas = new VistaEstadisticas();
                 obj_vista_menu.setVisible(false);
             }
         });
