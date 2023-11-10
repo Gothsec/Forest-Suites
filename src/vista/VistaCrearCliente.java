@@ -59,8 +59,9 @@ public class VistaCrearCliente extends JFrame{
         add(label);
         // Labels y TextFields
         
-        JLabel labelNombre = new JLabel("Nombre:");
+        JLabel labelNombre = new JLabel("Nombre");
         labelNombre.setBounds(30, 60, 100, 30);
+        labelNombre.setFont(new Font("Tahoma", Font.BOLD, 13));
         add(labelNombre);
         
         textFieldNombre = new JTextField();
@@ -68,8 +69,9 @@ public class VistaCrearCliente extends JFrame{
         textFieldNombre.setBounds(140, 60, 200, 30);
         add(textFieldNombre);
 
-        JLabel labelId = new JLabel("ID:");
+        JLabel labelId = new JLabel("ID");
         labelId.setBounds(30, 100, 100, 30);
+        labelId.setFont(new Font("Tahoma", Font.BOLD, 13));
         add(labelId);
         
         textFieldId = new JTextField();
@@ -78,8 +80,9 @@ public class VistaCrearCliente extends JFrame{
         textFieldId.setEditable(false);
         add(textFieldId);
 
-        JLabel labelEmail = new JLabel("Email:");
+        JLabel labelEmail = new JLabel("Email");
         labelEmail.setBounds(30, 140, 100, 30);
+        labelEmail.setFont(new Font("Tahoma", Font.BOLD, 13));
         add(labelEmail);
         
         textFieldEmail = new JTextField();
@@ -87,8 +90,9 @@ public class VistaCrearCliente extends JFrame{
         textFieldEmail.setBounds(140, 140, 200, 30);
         add(textFieldEmail);
 
-        JLabel labelHabitacion = new JLabel("Habitación:");
+        JLabel labelHabitacion = new JLabel("Habitación");
         labelHabitacion.setBounds(30, 180, 100, 30);
+        labelHabitacion.setFont(new Font("Tahoma", Font.BOLD, 13));
         add(labelHabitacion);
         
         comboBoxHabitacion = new JComboBox<>(opcionesHabitacion);
@@ -96,12 +100,14 @@ public class VistaCrearCliente extends JFrame{
         add(comboBoxHabitacion);
 
         // Botones y etiquetas adicionales
-        JLabel labelCheckin = new JLabel("Check-in:");
+        JLabel labelCheckin = new JLabel("Check-in");
         labelCheckin.setBounds(30, 220, 100, 30);
+        labelCheckin.setFont(new Font("Tahoma", Font.BOLD, 13));
         add(labelCheckin);
 
-        JLabel labelCheckout = new JLabel("Check-out:");
+        JLabel labelCheckout = new JLabel("Check-out");
         labelCheckout.setBounds(30, 260, 100, 30);
+        labelCheckout.setFont(new Font("Tahoma", Font.BOLD, 13));
         add(labelCheckout);
 
         selectCheckin = new JButton("Fecha");
