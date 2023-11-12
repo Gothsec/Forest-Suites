@@ -11,6 +11,9 @@ Version 2.0
 
 package vista;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -26,17 +29,36 @@ import java.text.SimpleDateFormat;
 public class VistaGraficoBarras extends JFrame {
 
     JFreeChart chart;
+    public ImageIcon icono_volver;
+    public JButton boton_volver;
 
     public VistaGraficoBarras() {
         super("Gráfico de Reservas por Duración de Estadía");
         setSize(800, 600);
+        setResizable(false);
         setLocationRelativeTo(null);
 
         crearGrafico();
 
+        // Crear un nuevo panel contenedor
+        JPanel panelContenedor = new JPanel();
+        panelContenedor.setLayout(new BoxLayout(panelContenedor, BoxLayout.X_AXIS));
+
+        // Crear el botón de retroceso
+        icono_volver = new ImageIcon(getClass().getResource("../iconos/icono-volver.png"));
+        boton_volver = new JButton(icono_volver);
+        boton_volver.setBackground(Color.white);
+        boton_volver.setBounds(20, 520, 30, 30);
+        add(boton_volver);
+
+        // Ajustar el diseño del panel gráfico
         ChartPanel panel = new ChartPanel(chart, false);
-        panel.setBounds(10, 20, 760, 520);
-        add(panel);
+        panel.setLayout(new BorderLayout());
+        panel.setPreferredSize(new Dimension(800, 520));
+        panelContenedor.add(panel);
+
+        // Añadir el panel contenedor al JFrame
+        add(panelContenedor);
 
         setVisible(true);
     }

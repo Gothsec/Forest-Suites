@@ -21,6 +21,8 @@ import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import org.jfree.chart.labels.PieSectionLabelGenerator;
 import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
@@ -28,6 +30,8 @@ import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
 public class VistaGraficoTorta extends JFrame {
 
     JFreeChart chart;
+    public ImageIcon icono_volver; 
+    public JButton boton_volver;
 
     public VistaGraficoTorta() {
         super("Gráfico de Tipos de Habitación ocupadas");
@@ -41,6 +45,12 @@ public class VistaGraficoTorta extends JFrame {
         ChartPanel panel = new ChartPanel(chart, false);
         panel.setBounds(10, 20, 760, 520);
         add(panel);
+        
+        icono_volver = new ImageIcon(getClass().getResource("../iconos/icono-volver.png"));
+        boton_volver = new JButton(icono_volver);
+        boton_volver.setBackground(Color.white);
+        boton_volver.setBounds(20, 520, 30, 30);
+        add(boton_volver);
 
         setVisible(true);
     }

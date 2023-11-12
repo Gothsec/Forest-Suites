@@ -14,9 +14,6 @@ package controlador;
 import Utilidades.Utilidades;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import modelo.ModeloCrearCliente;
-import vista.VistaCrear;
-import vista.VistaCrearCliente;
 import vista.VistaEstadisticas;
 import vista.VistaGraficoBarras;
 import vista.VistaGraficoLineas;
@@ -29,7 +26,7 @@ public class ControladorEstadisticas {
     VistaEstadisticas obj_vista_graficos;
     Utilidades obj_utilidades = new Utilidades();
     
-    public ControladorEstadisticas (VistaMenuPrincipal obj_menu, VistaEstadisticas obj_vista_graficos) {
+    public ControladorEstadisticas (VistaEstadisticas obj_vista_graficos) {
         this.obj_menu = obj_menu;
         this.obj_vista_graficos= obj_vista_graficos;
         
@@ -38,6 +35,7 @@ public class ControladorEstadisticas {
             @Override
             public void actionPerformed(ActionEvent e) {
                 VistaGraficoBarras obj_vista_barras = new VistaGraficoBarras();
+                ControladorGraficoBarras obj_controlador_barras = new ControladorGraficoBarras(obj_vista_barras);
                 obj_vista_graficos.setVisible(false);
             }
         });
@@ -47,6 +45,7 @@ public class ControladorEstadisticas {
             @Override
             public void actionPerformed(ActionEvent e) {
                 VistaGraficoLineas obj_vista_lineas = new VistaGraficoLineas();
+                ControladorGraficoLineas obj_controlador_lineas = new ControladorGraficoLineas(obj_vista_lineas);
                 obj_vista_graficos.setVisible(false);
             }
         });
@@ -56,6 +55,7 @@ public class ControladorEstadisticas {
             @Override
             public void actionPerformed(ActionEvent e) {
                 VistaGraficoTorta obj_vista_torta = new VistaGraficoTorta();
+                ControladorGraficoTorta obj_controlador_torta = new ControladorGraficoTorta(obj_vista_torta);
                 obj_vista_graficos.setVisible(false);
             }
         });

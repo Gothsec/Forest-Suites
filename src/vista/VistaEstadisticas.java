@@ -42,7 +42,7 @@ public class VistaEstadisticas extends JFrame {
         
         // LABELS
         label_titulo = new JLabel("Estadisticas");
-        label_titulo.setBounds(155, 35, 200, 40);
+        label_titulo.setBounds(110, 35, 200, 40);
         label_titulo.setFont(new Font("Tahoma", Font.BOLD, 30));
         add(label_titulo);
         
@@ -54,15 +54,15 @@ public class VistaEstadisticas extends JFrame {
         add(boton_volver);
         
         boton_barras = new JButton("Grafico de barras");
-        boton_barras.setBounds(110, 130, 200,40);
+        boton_barras.setBounds(100, 130, 200,40);
         add(boton_barras);
         
         boton_lineas = new JButton("Grafico de lineas");
-        boton_lineas.setBounds(110, 200, 200,40);
+        boton_lineas.setBounds(100, 200, 200,40);
         add(boton_lineas);
         
         boton_torta = new JButton("Grafico de torta");
-        boton_torta.setBounds(110, 270, 200,40);
+        boton_torta.setBounds(100, 270, 200,40);
         add(boton_torta);
     }
 }

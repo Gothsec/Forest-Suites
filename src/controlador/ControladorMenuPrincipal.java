@@ -77,7 +77,7 @@ public class ControladorMenuPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 VistaEstadisticas obj_vista_estadisticas = new VistaEstadisticas();
-                ControladorEstadisticas obj_controlador_est = new ControladorEstadisticas(obj_vista_menu, obj_vista_estadisticas);
+                ControladorEstadisticas obj_controlador_est = new ControladorEstadisticas(obj_vista_estadisticas);
                 obj_vista_menu.setVisible(false);
             }
         });
