@@ -18,6 +18,9 @@ import modelo.ModeloCrearCliente;
 import vista.VistaCrear;
 import vista.VistaCrearCliente;
 import vista.VistaEstadisticas;
+import vista.VistaGraficoBarras;
+import vista.VistaGraficoLineas;
+import vista.VistaGraficoTorta;
 import vista.VistaMenuPrincipal;
 
 public class ControladorEstadisticas {
@@ -34,7 +37,7 @@ public class ControladorEstadisticas {
         obj_vista_graficos.boton_barras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VistaEstadisticas obj_vista_graficos = new VistaEstadisticas();
+                VistaGraficoBarras obj_vista_barras = new VistaGraficoBarras();
                 obj_vista_graficos.setVisible(false);
             }
         });
@@ -43,7 +46,17 @@ public class ControladorEstadisticas {
             
             @Override
             public void actionPerformed(ActionEvent e) {
-                //----
+                VistaGraficoLineas obj_vista_lineas = new VistaGraficoLineas();
+                obj_vista_graficos.setVisible(false);
+            }
+        });
+        
+        obj_vista_graficos.boton_torta.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VistaGraficoTorta obj_vista_torta = new VistaGraficoTorta();
+                obj_vista_graficos.setVisible(false);
             }
         });
         
