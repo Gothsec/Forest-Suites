@@ -11,6 +11,7 @@ Version 2.0
 
 package controlador;
 
+import conexion_base.Conexion;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
@@ -64,8 +65,8 @@ public class ControladorCrearCliente {
     class GuardarListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            objModelo.nuevaReservacion();
-            objVista.labelMensaje.setText("Guardado exitosamente.");
+            ModeloCrearCliente obj_crear = new ModeloCrearCliente(objVista);
+            obj_crear.nuevaReservacion();
         }
     }
     
@@ -85,6 +86,7 @@ public class ControladorCrearCliente {
             VistaCrear obj_vistacrear = new VistaCrear();
             ControladorCrear obj_controlador_crear = new ControladorCrear(obj_menu, obj_vistacrear);
             objVista.setVisible(false);
+            objVista.dispose();
         }
     }
 }

@@ -30,7 +30,7 @@ public class ControladorListadoGeneral {
                 VistaListados obj_vista_est = new VistaListados();
                 ControladorListados obj_controlador_est = new ControladorListados(obj_vista_est);
                 obj_vista_graficos.setVisible(false);
-                
+                obj_vista_graficos.dispose();
             }
         });
     }

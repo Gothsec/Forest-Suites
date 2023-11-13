@@ -1,3 +1,5 @@
+package conexion_base;
+
 
 import java.sql.Connection;
 import java.sql.Statement;
@@ -24,7 +26,7 @@ public class Conexion {
         boolean error = false;
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             error = true;
             JOptionPane.showMessageDialog(null,

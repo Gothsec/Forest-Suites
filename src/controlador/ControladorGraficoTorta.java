@@ -33,7 +33,7 @@ public class ControladorGraficoTorta {
                 VistaEstadisticas obj_vista_est = new VistaEstadisticas();
                 ControladorEstadisticas obj_controlador_est = new ControladorEstadisticas(obj_vista_est);
                 obj_vista_graficos.setVisible(false);
-                
+                obj_vista_graficos.dispose();
             }
         });
     }

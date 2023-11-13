@@ -79,27 +79,27 @@ public class VistaConsulta extends JFrame {
         
         textfield_nombre = new JTextField();
         textfield_nombre.setBounds(170, 150, 250, 30);
-        textfield_nombre.setEnabled(false); // Deshabilitando los textfield para que no se pueda ingresar nada y evitar errores
+        textfield_nombre.setEditable(false); // Deshabilitando los textfield para que no se pueda ingresar nada y evitar errores
         add(textfield_nombre);
         
         textfield_email = new JTextField();
         textfield_email.setBounds(170, 195, 250, 30);
-        textfield_email.setEnabled(false);
+        textfield_email.setEditable(false);
         add(textfield_email);
         
         textfield_habitacion = new JTextField();
         textfield_habitacion.setBounds(170, 240, 250, 30);
-        textfield_habitacion.setEnabled(false);
+        textfield_habitacion.setEditable(false);
         add(textfield_habitacion);
         
         textfield_checkin = new JTextField();
         textfield_checkin.setBounds(170, 285, 250, 30);
-        textfield_checkin.setEnabled(false);
+        textfield_checkin.setEditable(false);
         add(textfield_checkin);
         
         textfield_checkout = new JTextField();
         textfield_checkout.setBounds(170, 330, 250, 30);
-        textfield_checkout.setEnabled(false);
+        textfield_checkout.setEditable(false);
         add(textfield_checkout);
         
         

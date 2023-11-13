@@ -20,7 +20,8 @@ public class ControladorAcerca {
             @Override
             public void actionPerformed(ActionEvent e) {
                 obj_vista_menu.setVisible(true);
-                obj_vista_acerca.setVisible(false);                
+                obj_vista_acerca.setVisible(false);    
+                obj_vista_acerca.dispose();
             }
         });
     }

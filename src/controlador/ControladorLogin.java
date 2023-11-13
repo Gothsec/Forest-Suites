@@ -74,6 +74,7 @@ public class ControladorLogin {
         } else {
             if (login.equals("admin") && passw.equals("123")) {
                 objeto_vista.setVisible(false);
+                objeto_vista.dispose();
                 VistaMenuPrincipal obj_vista_menu = new VistaMenuPrincipal();
                 ControladorMenuPrincipal controlador = new ControladorMenuPrincipal(obj_vista_menu);
                 obj_vista_menu.setVisible(true);

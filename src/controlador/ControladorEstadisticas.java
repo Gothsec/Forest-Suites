@@ -66,7 +66,7 @@ public class ControladorEstadisticas {
                 VistaMenuPrincipal obj_vistamenu = new VistaMenuPrincipal();
                 ControladorMenuPrincipal obj_controladormenu = new ControladorMenuPrincipal(obj_vistamenu);
                 obj_vista_graficos.setVisible(false);
-                
+                obj_vista_graficos.dispose();
             }
         });
     }

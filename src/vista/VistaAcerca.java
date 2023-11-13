@@ -75,7 +75,7 @@ public class VistaAcerca extends JFrame {
         label_alejo = new JLabel("Alejandro Cuenca");
         label_alejo.setFont(new Font("Tahoma", Font.PLAIN, 15));
         
-        label_codigo_alejo = new JLabel("22644?? - 2724");
+        label_codigo_alejo = new JLabel("2264475 - 2724");
         label_codigo_alejo.setFont(new Font("Tahoma", Font.PLAIN, 12));
         
         label_email_alejo = new JLabel("emmanuel.cuenca@correounivalle.edu.co");

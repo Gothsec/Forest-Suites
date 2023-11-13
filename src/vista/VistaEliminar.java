@@ -14,8 +14,6 @@ public class VistaEliminar extends JFrame {
     
     public JLabel label_titulo, label_id, label_nombre, label_email, label_habitacion, label_checkin, label_checkout;
     public JTextField textfield_id, textfield_nombre, textfield_email, textfield_habitacion, textfield_checkin, textfield_checkout;
-    public JComboBox<String> combobox_habitacion;
-    public String[] lista_habitaciones = {"Individual", "Doble", "Matrimonial", "Suite"};
     public JButton boton_buscar, boton_eliminar, boton_volver;
     public ImageIcon icono_volver;
     
@@ -83,31 +81,28 @@ public class VistaEliminar extends JFrame {
         
         textfield_nombre = new JTextField();
         textfield_nombre.setBounds(170, 150, 250, 30);
-        textfield_nombre.setEnabled(false); // Deshabilitando los textfield para que no se pueda ingresar nada y evitar errores
+        textfield_nombre.setEditable(false); // Deshabilitando los textfield para que no se pueda ingresar nada y evitar errores
         add(textfield_nombre);
         
         textfield_email = new JTextField();
         textfield_email.setBounds(170, 195, 250, 30);
-        textfield_email.setEnabled(false);
+        textfield_email.setEditable(false);
         add(textfield_email);
         
         textfield_checkin = new JTextField();
         textfield_checkin.setBounds(170, 285, 250, 30);
-        textfield_checkin.setEnabled(false);
+        textfield_checkin.setEditable(false);
         add(textfield_checkin);
         
         textfield_checkout = new JTextField();
         textfield_checkout.setBounds(170, 330, 250, 30);
-        textfield_checkout.setEnabled(false);
+        textfield_checkout.setEditable(false);
         add(textfield_checkout);
         
-        
-        // COMBOBOX HABITACION
-        
-        combobox_habitacion = new JComboBox<>(lista_habitaciones);
-        combobox_habitacion.setBounds(170, 240, 250, 30);
-        combobox_habitacion.setEnabled(false);
-        add(combobox_habitacion);
+        textfield_habitacion = new JTextField();
+        textfield_habitacion.setBounds(170, 240, 250, 30);
+        textfield_habitacion.setEditable(false);
+        add(textfield_habitacion);
         
         
         // BOTONES

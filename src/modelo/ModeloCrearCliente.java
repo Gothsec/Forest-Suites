@@ -11,6 +11,9 @@ Version 2.0
 
 package modelo;
 
+import conexion_base.Conexion;
+import controlador.ControladorCrear;
+import controlador.ControladorCrearCliente;
 import java.awt.Component;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -20,54 +23,20 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerDateModel;
+import vista.VistaCrear;
 import vista.VistaCrearCliente;
+import java.sql.SQLException;
+
 
 
 public class ModeloCrearCliente {
     
     VistaCrearCliente objVista;
+    private static int contadorid = 0;
+    private int id;
     
     public ModeloCrearCliente(VistaCrearCliente objVista){
         this.objVista = objVista;
-    }
-    
-    int lastGeneratedId = contarReservaciones();
-    
-    public int generateNextId() {
-        return ++lastGeneratedId; // Incrementar y devolver el ID siguiente
-    }
-    
-    public int contarReservaciones() {
-        FileReader file = null;
-        int numero = 0;
-        
-        try {
-            
-            file = new FileReader("datos.csv");
-        
-        } catch (IOException e) {
-            
-            return numero;
-        
-        }
-        
-        BufferedReader lectura = new BufferedReader(file);
-        String fila = "";
-            
-        try {
-                
-            while((fila = lectura.readLine()) != null) {
-                numero++;
-            }
-                
-        } catch (Exception e) {
-        
-            JOptionPane.showMessageDialog(null, "Error");
-        
-        }
-            
-        
-        return numero;
     }
     
     public static Date showDatePicker(Component parent) {
@@ -85,40 +54,44 @@ public class ModeloCrearCliente {
     }
     
     public void nuevaReservacion() {
+        Conexion con = new Conexion();
+        boolean errorConexion = con.conectarMySQL("forest_suites_db", "root", "", "127.0.0.1");
 
-        FileWriter archivo = null;
-        boolean error = false;
-        
-        
-        try {
-            archivo = new FileWriter("datos.csv", true);
-        } catch (IOException e) {
-            error = true;
-            JOptionPane.showMessageDialog(null, "Ocurrió un error al intentar crear el archivo 'datos.csv'");
-        }
-        
-        if (!error) {
-            
+        if (!errorConexion) {
             String nombre = objVista.textFieldNombre.getText();
             String correo = objVista.textFieldEmail.getText();
             String habitacion = objVista.comboBoxHabitacion.getSelectedItem().toString();
-            String checkIn = objVista.textFieldCheckin.getText();
-            String checkOut = objVista.textFieldCheckout.getText();
+            String checkin = objVista.textFieldCheckin.getText();
+            String checkout = objVista.textFieldCheckout.getText();
 
-            // Obtener el ID del TextField
-            int id = Integer.parseInt(objVista.textFieldId.getText());
-            
-            try {
-                archivo.write(id + ";" + nombre + ";" + habitacion + ";" + correo + ";" + checkIn + ";" + checkOut + "\r\n");
-            } catch (IOException e) {
-                JOptionPane.showMessageDialog(null, "Error al tratar de guardar el archivo");
+        try {
+            int id = ++contadorid;
+            String[] datos = { String.valueOf(id), nombre, correo, habitacion, checkin, checkout, "activo" };
+            boolean errorGuardado = con.insertar("cliente", datos);
+
+            if (!errorGuardado) {
+                JOptionPane.showMessageDialog(null, "Reservación guardada exitosamente");
             }
-            
-            try {
-                archivo.close();
-            } catch (IOException e) {
-                JOptionPane.showMessageDialog(null, "Error al tratar de cerrar el archivo");
+
+            int resp = JOptionPane.showConfirmDialog(null, "¿Desea guardar otra reservación?", "Confirmación",
+                    JOptionPane.YES_NO_OPTION);
+            if (resp == JOptionPane.YES_OPTION) {
+                objVista.textFieldNombre.setText("");
+                objVista.textFieldEmail.setText("");
+                objVista.textFieldCheckin.setText("");
+                objVista.textFieldCheckout.setText("");
+            } else {
+                VistaCrear obj_crear = new VistaCrear();
+                objVista.setVisible(false);
             }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al interactuar con la base de datos");
+            e.printStackTrace();
+        } finally {
+            con.desconectar();
         }
     }
+}
+
 }
