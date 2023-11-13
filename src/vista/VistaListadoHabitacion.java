@@ -26,6 +26,8 @@ public class VistaListadoHabitacion extends JFrame {
         setTitle("Listado de Clientes por Tipo de Habitación");
         setSize(1000, 500);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setResizable(false);
 
         DefaultTableModel model = new DefaultTableModel();
         JTable table = new JTable(model);

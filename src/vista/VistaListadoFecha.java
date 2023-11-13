@@ -1,31 +1,23 @@
-/* Forest Suites es una app hecha en Java para la gestion de
-reservas en un hotel, con opciones de crear, modificar y buscar.
-
-Oscar Andres Hernandez Pineda - 2264488
-Camilo Andres Garcia - 2264484
-Alejandro Cuenca - 22644755
-
-Ult. fecha modificacion: 20/10/2023
-Version 2.0
-*/
-
 package vista;
 
+import java.awt.Color;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class VistaListadoFecha extends JFrame {
+
     public JTextField textfield1;
     public JComboBox<String> comboBox;
     public JComboBox<String> tipoFechaCombo;
+    public JButton boton_volver;
+    public ImageIcon icono_volver;
 
     public VistaListadoFecha() {
         setTitle("Listado de Clientes por Tipo de Fecha");
         setSize(1000, 500);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         DefaultTableModel model = new DefaultTableModel();
         JTable table = new JTable(model);
@@ -53,13 +45,27 @@ public class VistaListadoFecha extends JFrame {
 
         JButton buscarButton = new JButton("Buscar");
 
+        icono_volver = new ImageIcon(getClass().getResource("../iconos/icono-volver.png"));
+        boton_volver = new JButton(icono_volver);
+        boton_volver.setBackground(Color.white);
+
         GroupLayout.SequentialGroup horizontalGroup = layout.createSequentialGroup();
-        horizontalGroup.addComponent(tipoFechaLabel).addComponent(tipoFechaCombo).addComponent(fechaLabel).addComponent(textfield1).addComponent(buscarButton);
+        horizontalGroup.addComponent(tipoFechaLabel)
+                      .addComponent(tipoFechaCombo)
+                      .addComponent(fechaLabel)
+                      .addComponent(textfield1)
+                      .addComponent(buscarButton)
+                      .addComponent(boton_volver);
         layout.setHorizontalGroup(horizontalGroup);
 
         GroupLayout.SequentialGroup verticalGroup = layout.createSequentialGroup();
         verticalGroup.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                .addComponent(tipoFechaLabel).addComponent(tipoFechaCombo).addComponent(fechaLabel).addComponent(textfield1).addComponent(buscarButton));
+                        .addComponent(tipoFechaLabel)
+                        .addComponent(tipoFechaCombo)
+                        .addComponent(fechaLabel)
+                        .addComponent(textfield1)
+                        .addComponent(buscarButton)
+                        .addComponent(boton_volver));
         layout.setVerticalGroup(verticalGroup);
 
         // Ajustar la posición y tamaño del JTable
@@ -72,16 +78,18 @@ public class VistaListadoFecha extends JFrame {
 
         mainLayout.setHorizontalGroup(
                 mainLayout.createParallelGroup()
-                        .addComponent(panel)
-                        .addComponent(scrollPane)
+                          .addComponent(panel)
+                          .addComponent(scrollPane)
         );
 
         mainLayout.setVerticalGroup(
                 mainLayout.createSequentialGroup()
-                        .addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(scrollPane)
+                          .addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE)
+                          .addComponent(scrollPane)
         );
 
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);  // Centrar la ventana
         setVisible(true);
     }
 

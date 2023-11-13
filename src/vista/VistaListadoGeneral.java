@@ -1,27 +1,20 @@
-/* Forest Suites es una app hecha en Java para la gestion de
-reservas en un hotel, con opciones de crear, modificar y buscar.
-
-Oscar Andres Hernandez Pineda - 2264488
-Camilo Andres Garcia - 2264484
-Alejandro Cuenca - 22644755
-
-Ult. fecha modificacion: 20/10/2023
-Version 2.0
-*/
-
 package vista;
 
+import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.io.BufferedReader;
-import java.io.FileReader;
 
 public class VistaListadoGeneral extends JFrame {
+
+    public JButton boton_volver;
+    public ImageIcon icono_volver;
 
     public VistaListadoGeneral() {
         setTitle("Listado General de Clientes");
         setSize(800, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setResizable(false);
 
         DefaultTableModel model = new DefaultTableModel();
         JTable table = new JTable(model);
@@ -38,7 +31,21 @@ public class VistaListadoGeneral extends JFrame {
 
         // Agregar la tabla a un JScrollPane
         JScrollPane scrollPane = new JScrollPane(table);
-        add(scrollPane);
+
+        // Crear un JPanel para contener el botón y el JScrollPane
+        JPanel panelPrincipal = new JPanel(new BorderLayout());
+
+        icono_volver = new ImageIcon(getClass().getResource("../iconos/icono-volver.png"));
+        boton_volver = new JButton(icono_volver);
+        boton_volver.setBackground(Color.white);
+
+        // Agregar el botón al panel en la esquina superior izquierda
+        panelPrincipal.add(boton_volver, BorderLayout.WEST); // Usa BorderLayout.WEST en lugar de BorderLayout.NORTH
+        // Agregar el JScrollPane al panel principal
+        panelPrincipal.add(scrollPane, BorderLayout.CENTER);
+
+        // Agregar el panel principal al JFrame
+        getContentPane().add(panelPrincipal);
 
         setVisible(true);
     }

@@ -13,14 +13,14 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import vista.VistaListadoFecha;
+import vista.VistaListadoGeneral;
 import vista.VistaListados;
 
-public class ControladorListadoFecha {
+public class ControladorListadoGeneral {
     
-    VistaListadoFecha obj_vista_graficos;
+    VistaListadoGeneral obj_vista_graficos;
     
-    public ControladorListadoFecha (VistaListadoFecha obj_vista_graficos) {
+    public ControladorListadoGeneral (VistaListadoGeneral obj_vista_graficos) {
         this.obj_vista_graficos= obj_vista_graficos;
 
 

@@ -31,8 +31,9 @@ public class ControladorListados {
 
         obj_vista_graficos.btnListadoGeneral.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                VistaListadoGeneral generalFrame = new VistaListadoGeneral();
-                generalFrame.setVisible(true);
+                VistaListadoGeneral obj_general = new VistaListadoGeneral();
+                ControladorListadoGeneral obj_gen = new ControladorListadoGeneral(obj_general);
+                obj_general.setVisible(true);
                 obj_vista_graficos.setVisible(false);
             }
         });
