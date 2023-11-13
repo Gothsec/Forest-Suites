@@ -2,6 +2,7 @@ package vista;
 
 import controlador.ControladorLogin;
 import controlador.ControladorMenuPrincipal;
+import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -36,30 +37,44 @@ public class VistaMenuPrincipal extends JFrame{
         // Distancia entre elementos = 60
         
         boton_crear = new JButton("Crear");
+        boton_crear.setBackground(Color.darkGray);
+        boton_crear.setForeground(Color.white);
         boton_crear.setBounds(95, 90, 200, 40);
         add(boton_crear);
         
         boton_consulta = new JButton("Consultar");
+        boton_consulta.setBackground(Color.darkGray);
+        boton_consulta.setForeground(Color.white);
         boton_consulta.setBounds(95, 150, 200, 40);
         add(boton_consulta);
         
         boton_actualizar = new JButton("Actualizar");
+        boton_actualizar.setBackground(Color.darkGray);
+        boton_actualizar.setForeground(Color.white);
         boton_actualizar.setBounds(95, 210, 200, 40);
         add(boton_actualizar);
         
         boton_eliminar = new JButton("Eliminar");
+        boton_eliminar.setBackground(Color.darkGray);
+        boton_eliminar.setForeground(Color.white);
         boton_eliminar.setBounds(95, 270, 200, 40);
         add(boton_eliminar);
         
         boton_listados = new JButton("Listados");
+        boton_listados.setBackground(Color.darkGray);
+        boton_listados.setForeground(Color.white);
         boton_listados.setBounds(95, 330, 200, 40);
         add(boton_listados);
         
         boton_estadisticas = new JButton("Estadisticas");
+        boton_estadisticas.setBackground(Color.darkGray);
+        boton_estadisticas.setForeground(Color.white);
         boton_estadisticas.setBounds(95, 390, 200, 40);
         add(boton_estadisticas);
         
         boton_acerca = new JButton("Acerca");
+        boton_acerca.setBackground(Color.darkGray);
+        boton_acerca.setForeground(Color.white);
         boton_acerca.setBounds(95, 450, 200, 40);
         add(boton_acerca);
     }
