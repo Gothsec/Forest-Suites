@@ -28,7 +28,7 @@ replay_pid*
 *.xml
 
 # # Ignorar archivos generados por NetBeans
-nbproject/
+#nbproject/
 # build.xml
 # manifest.mf
 # build/
