@@ -1,4 +1,5 @@
 package modelo;
+// faltan comentarios
 
 import java.io.BufferedReader;
 import java.io.FileReader;
