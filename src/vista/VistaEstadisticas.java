@@ -29,7 +29,7 @@ public class VistaEstadisticas extends JFrame {
     public VistaEstadisticas () {
         super("Forest Suites");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(400, 400);
+        setSize(400, 350);
         setResizable(false);
         setLocationRelativeTo(null);
         setLayout(null);
@@ -54,15 +54,15 @@ public class VistaEstadisticas extends JFrame {
         add(boton_volver);
         
         boton_barras = new JButton("Grafico de barras");
-        boton_barras.setBounds(100, 130, 200,40);
+        boton_barras.setBounds(100, 95, 200,40);
         add(boton_barras);
         
         boton_lineas = new JButton("Grafico de lineas");
-        boton_lineas.setBounds(100, 200, 200,40);
+        boton_lineas.setBounds(100, 155, 200,40);
         add(boton_lineas);
         
         boton_torta = new JButton("Grafico de torta");
-        boton_torta.setBounds(100, 270, 200,40);
+        boton_torta.setBounds(100, 215, 200,40);
         add(boton_torta);
     }
 }
