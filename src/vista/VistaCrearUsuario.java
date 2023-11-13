@@ -4,17 +4,22 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+import static vista.VistaCrearCliente.opcionesHabitacion;
 
 public class VistaCrearUsuario extends JFrame {
     
-    public JLabel label_titulo, label_nombre, label_contraseña;
+    public JLabel label_titulo, label_nombre, label_contraseña, label_tipo;
     public JTextField textfield_contraseña, textfield_nombre;
     public JButton boton_crear, boton_volver;
     public ImageIcon icono_volver;
+    
+    public static String[] opcionesTipo = {"Administrador", "Recepcionista", "Empleado"};
+    public JComboBox<String> comboBoxTipo;
     
     public VistaCrearUsuario () {
         super("Forest Suites");
@@ -31,7 +36,7 @@ public class VistaCrearUsuario extends JFrame {
     public void crearGUI () {
         
         label_titulo = new JLabel("Crear Usuario");
-        label_titulo.setBounds(175, 30, 200, 40);
+        label_titulo.setBounds(175, 30, 250, 40);
         label_titulo.setFont(new Font("Tahoma", Font.BOLD, 30));
         add(label_titulo);
         
@@ -49,9 +54,22 @@ public class VistaCrearUsuario extends JFrame {
         label_contraseña.setFont(new Font("Tahoma", Font.PLAIN, 15));
         add(label_contraseña);
         
+        label_tipo = new JLabel("Tipo");
+        label_tipo.setBounds(75, 240, 200, 40);
+        label_tipo.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        add(label_tipo);
+        
         textfield_contraseña = new JTextField();
         textfield_contraseña.setBounds(170, 195, 250, 30);
         add(textfield_contraseña);
+        
+        comboBoxTipo = new JComboBox<>(opcionesTipo);
+        comboBoxTipo.setBounds(170, 250, 250, 30);
+        add(comboBoxTipo);
+        
+        boton_crear = new JButton("Crear usuario");
+        boton_crear.setBounds(200, 350, 150, 30);
+        add(boton_crear);
         
         icono_volver = new ImageIcon(getClass().getResource("../iconos/icono-volver.png"));
         boton_volver = new JButton(icono_volver);

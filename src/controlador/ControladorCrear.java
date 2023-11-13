@@ -15,16 +15,20 @@ import Utilidades.Utilidades;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.ModeloCrearCliente;
+import modelo.ModeloCrearUsuario;
 import vista.VistaCrear;
 import vista.VistaCrearCliente;
+import vista.VistaCrearUsuario;
 import vista.VistaMenuPrincipal;
 
 public class ControladorCrear {
     
-    ModeloCrearCliente obj_modelo;
+    ModeloCrearCliente obj_modelocliente;
+    ModeloCrearUsuario obj_modelousuario;
     VistaMenuPrincipal obj_menu;
     VistaCrear obj_vista_crear;
     VistaCrearCliente obj_vista_crearcliente;
+    VistaCrearUsuario obj_vista_crearusuario;
     Utilidades obj_utilidades = new Utilidades();
     
     public ControladorCrear (VistaMenuPrincipal obj_menu, VistaCrear obj_vista_crear) {
@@ -36,7 +40,7 @@ public class ControladorCrear {
             @Override
             public void actionPerformed(ActionEvent e) {
                 obj_vista_crearcliente = new VistaCrearCliente(obj_menu);
-                ControladorCrearCliente obj_controlador_crearcliente = new ControladorCrearCliente(obj_modelo, obj_vista_crearcliente);
+                ControladorCrearCliente obj_controlador_crearcliente = new ControladorCrearCliente(obj_modelocliente, obj_vista_crearcliente);
                 obj_vista_crear.setVisible(false);
             }
         });
@@ -45,7 +49,9 @@ public class ControladorCrear {
             
             @Override
             public void actionPerformed(ActionEvent e) {
-                //----
+                obj_vista_crearusuario = new VistaCrearUsuario();
+                ControladorCrearUsuario obj_controlador_crearusuario = new ControladorCrearUsuario(obj_modelousuario, obj_vista_crearusuario);
+                obj_vista_crear.setVisible(false);
             }
         });
         
