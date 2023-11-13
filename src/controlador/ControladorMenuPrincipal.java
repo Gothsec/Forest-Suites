@@ -7,6 +7,8 @@ import vista.VistaActualizar;
 import vista.VistaConsulta;
 import vista.VistaCrear;
 import vista.VistaEliminar;
+import vista.VistaEstadisticas;
+import vista.VistaListados;
 import vista.VistaMenuPrincipal;
 
 public class ControladorMenuPrincipal {
@@ -65,7 +67,8 @@ public class ControladorMenuPrincipal {
         
             @Override
             public void actionPerformed(ActionEvent e) {
-                // VistaListados obj_vista_listados = new VistaListados();
+                VistaListados obj_vista_listados = new VistaListados();
+                ControladorListados obj_controladorlist = new ControladorListados(obj_vista_listados);
                 obj_vista_menu.setVisible(false);
             }
         });
@@ -75,7 +78,8 @@ public class ControladorMenuPrincipal {
         
             @Override
             public void actionPerformed(ActionEvent e) {
-                // VistaEstadisticas obj_vista_estadisticas = new VistaEstadisticas();
+                VistaEstadisticas obj_vista_estadisticas = new VistaEstadisticas();
+                ControladorEstadisticas obj_controlador_est = new ControladorEstadisticas(obj_vista_estadisticas);
                 obj_vista_menu.setVisible(false);
             }
         });
