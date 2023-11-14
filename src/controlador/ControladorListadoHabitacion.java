@@ -23,7 +23,7 @@ public class ControladorListadoHabitacion {
     VistaMenuPrincipal obj_menu;
     VistaListadoHabitacion obj_vista_graficos;
     
-    public ControladorListadoHabitacion (VistaListadoHabitacion obj_vista_graficos) {
+    public ControladorListadoHabitacion (VistaMenuPrincipal obj_menu,VistaListadoHabitacion obj_vista_graficos) {
         this.obj_menu = obj_menu;
         this.obj_vista_graficos= obj_vista_graficos;
         
