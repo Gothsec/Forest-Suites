@@ -26,33 +26,31 @@ import vista.VistaMenuPrincipal;
 
 public class ControladorCrearUsuario {
     
+    public VistaCrear obj_vista_crear;
     public ModeloCrearUsuario objModelo;
     public VistaCrearUsuario objVista;
     public VistaMenuPrincipal obj_menu;
     
-    public ControladorCrearUsuario (ModeloCrearUsuario objModelo, VistaCrearUsuario objVista) {
-        this.objModelo = objModelo;
+    public ControladorCrearUsuario (VistaCrear obj_vista_crear, VistaCrearUsuario objVista) {
         this.objVista = objVista;
+        this.obj_vista_crear = obj_vista_crear;
         
-        objVista.boton_crear.addActionListener(new GuardarListener());
-        objVista.boton_volver.addActionListener(new VolverListener());
+        objVista.boton_volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                obj_vista_crear.setVisible(true);
+                objVista.setVisible(false);
+                objVista.dispose();
+            }
+        });
+        
+        objVista.boton_crear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ModeloCrearUsuario obj_crear = new ModeloCrearUsuario(objVista);
+                obj_crear.nuevoUsuario();
+            }
+        });
     }
     
-    class GuardarListener implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            ModeloCrearUsuario obj_crear = new ModeloCrearUsuario(objVista);
-            obj_crear.nuevoUsuario();
-        }
-    }
-    
-    class VolverListener implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            VistaCrear obj_vistacrear = new VistaCrear();
-            ControladorCrear obj_controlador_crear = new ControladorCrear(obj_menu, obj_vistacrear);
-            objVista.setVisible(false);
-            objVista.dispose();
-        }
-    }
 }

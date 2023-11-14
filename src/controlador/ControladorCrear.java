@@ -40,7 +40,7 @@ public class ControladorCrear {
             @Override
             public void actionPerformed(ActionEvent e) {
                 obj_vista_crearcliente = new VistaCrearCliente(obj_menu);
-                ControladorCrearCliente obj_controlador_crearcliente = new ControladorCrearCliente(obj_modelocliente, obj_vista_crearcliente);
+                ControladorCrearCliente obj_controlador_crearcliente = new ControladorCrearCliente(obj_vista_crear, obj_vista_crearcliente);
                 obj_vista_crear.setVisible(false);
             }
         });
@@ -50,7 +50,7 @@ public class ControladorCrear {
             @Override
             public void actionPerformed(ActionEvent e) {
                 obj_vista_crearusuario = new VistaCrearUsuario();
-                ControladorCrearUsuario obj_controlador_crearusuario = new ControladorCrearUsuario(obj_modelousuario, obj_vista_crearusuario);
+                ControladorCrearUsuario obj_controlador_crearusuario = new ControladorCrearUsuario(obj_vista_crear, obj_vista_crearusuario);
                 obj_vista_crear.setVisible(false);
             }
         });

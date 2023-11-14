@@ -6,21 +6,21 @@ import javax.swing.table.DefaultTableModel;
 
 public class VistaListadoFecha extends JFrame {
 
-    public JTextField textfield1;
+    public JTextField textfieldFecha;
     public JComboBox<String> comboBox;
     public JComboBox<String> tipoFechaCombo;
-    public JButton boton_volver;
+    public JButton boton_volver, buscarButton;
     public ImageIcon icono_volver;
-
+    public DefaultTableModel model = new DefaultTableModel();
+    public JTable table = new JTable(model);
+    
+    
     public VistaListadoFecha() {
         setTitle("Listado de Clientes por Tipo de Fecha");
         setSize(1000, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
-
-        DefaultTableModel model = new DefaultTableModel();
-        JTable table = new JTable(model);
 
         // Columnas al modelo
         model.addColumn("ID");
@@ -41,9 +41,9 @@ public class VistaListadoFecha extends JFrame {
         tipoFechaCombo = new JComboBox<>(new String[]{"Check-in", "Check-out"});
 
         JLabel fechaLabel = new JLabel("Fecha:");
-        textfield1 = new JTextField();
+        textfieldFecha = new JTextField();
 
-        JButton buscarButton = new JButton("Buscar");
+        buscarButton = new JButton("Buscar");
 
         icono_volver = new ImageIcon(getClass().getResource("../iconos/icono-volver.png"));
         boton_volver = new JButton(icono_volver);
@@ -53,7 +53,7 @@ public class VistaListadoFecha extends JFrame {
         horizontalGroup.addComponent(tipoFechaLabel)
                       .addComponent(tipoFechaCombo)
                       .addComponent(fechaLabel)
-                      .addComponent(textfield1)
+                      .addComponent(textfieldFecha)
                       .addComponent(buscarButton)
                       .addComponent(boton_volver);
         layout.setHorizontalGroup(horizontalGroup);
@@ -63,7 +63,7 @@ public class VistaListadoFecha extends JFrame {
                         .addComponent(tipoFechaLabel)
                         .addComponent(tipoFechaCombo)
                         .addComponent(fechaLabel)
-                        .addComponent(textfield1)
+                        .addComponent(textfieldFecha)
                         .addComponent(buscarButton)
                         .addComponent(boton_volver));
         layout.setVerticalGroup(verticalGroup);

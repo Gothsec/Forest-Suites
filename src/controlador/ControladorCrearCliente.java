@@ -24,19 +24,45 @@ import vista.VistaMenuPrincipal;
 
 public class ControladorCrearCliente {
     
+    
+    public VistaCrear obj_vista_crear;
     public ModeloCrearCliente objModelo;
     public VistaCrearCliente objVista;
     public VistaMenuPrincipal obj_menu;
     
-    public ControladorCrearCliente (ModeloCrearCliente objModelo, VistaCrearCliente objVista) {
-        this.objModelo = objModelo;
+    public ControladorCrearCliente (VistaCrear obj_vista_crear, VistaCrearCliente objVista) {
         this.objVista = objVista;
+        this.obj_vista_crear = obj_vista_crear;
         
         objVista.selectCheckin.addActionListener(new SelectCheckinListener());
         objVista.selectCheckout.addActionListener(new SelectCheckoutListener());
-        objVista.btnGuardarReserva.addActionListener(new GuardarListener());
-        objVista.btnLimpiarReserva.addActionListener(new LimpiarListener());
-        objVista.btnVolver.addActionListener(new VolverListener());
+    
+        objVista.btnVolver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                obj_vista_crear.setVisible(true);
+                objVista.setVisible(false);
+                objVista.dispose();
+            }
+        });
+        
+        objVista.btnGuardarReserva.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ModeloCrearCliente obj_crear = new ModeloCrearCliente(objVista);
+                obj_crear.nuevaReservacion();
+            }
+        });
+        
+        objVista.btnLimpiarReserva.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                objVista.textFieldNombre.setText("");
+                objVista.textFieldEmail.setText("");
+                objVista.textFieldCheckin.setText("");
+                objVista.textFieldCheckout.setText("");
+            }
+        });
     }
 
     
@@ -62,31 +88,5 @@ public class ControladorCrearCliente {
         }
     }
     
-    class GuardarListener implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            ModeloCrearCliente obj_crear = new ModeloCrearCliente(objVista);
-            obj_crear.nuevaReservacion();
-        }
     }
     
-    class LimpiarListener implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            objVista.textFieldNombre.setText("");
-            objVista.textFieldEmail.setText("");
-            objVista.textFieldCheckin.setText("");
-            objVista.textFieldCheckout.setText("");
-        }
-    }
-    
-    class VolverListener implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            VistaCrear obj_vistacrear = new VistaCrear();
-            ControladorCrear obj_controlador_crear = new ControladorCrear(obj_menu, obj_vistacrear);
-            objVista.setVisible(false);
-            objVista.dispose();
-        }
-    }
-}

@@ -13,6 +13,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import modelo.ModeloListadoFecha;
 import vista.VistaListadoFecha;
 import vista.VistaListados;
 
@@ -23,6 +24,13 @@ public class ControladorListadoFecha {
     public ControladorListadoFecha (VistaListadoFecha obj_vista_graficos) {
         this.obj_vista_graficos= obj_vista_graficos;
 
+        obj_vista_graficos.buscarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ModeloListadoFecha obj_modelo = new ModeloListadoFecha(obj_vista_graficos);
+                obj_modelo.obtenerDatos();
+            }
+        });
 
         obj_vista_graficos.boton_volver.addActionListener(new ActionListener() {
             @Override

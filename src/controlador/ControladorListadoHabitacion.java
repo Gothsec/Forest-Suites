@@ -13,6 +13,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import modelo.ModeloListadoHabitacion;
 import vista.VistaListadoHabitacion;
 import vista.VistaListados;
 import vista.VistaMenuPrincipal;
@@ -25,6 +26,14 @@ public class ControladorListadoHabitacion {
     public ControladorListadoHabitacion (VistaListadoHabitacion obj_vista_graficos) {
         this.obj_menu = obj_menu;
         this.obj_vista_graficos= obj_vista_graficos;
+        
+        obj_vista_graficos.boton_buscar.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ModeloListadoHabitacion obj_habitacion = new ModeloListadoHabitacion(obj_vista_graficos);
+                obj_habitacion.obtenerDatos();
+            }
+        });
 
 
         obj_vista_graficos.boton_volver.addActionListener(new ActionListener() {

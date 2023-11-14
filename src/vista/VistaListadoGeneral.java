@@ -8,7 +8,10 @@ public class VistaListadoGeneral extends JFrame {
 
     public JButton boton_volver;
     public ImageIcon icono_volver;
-
+    public DefaultTableModel model = new DefaultTableModel();
+    public JTable table = new JTable(model);
+    
+    
     public VistaListadoGeneral() {
         setTitle("Listado General de Clientes");
         setSize(800, 400);
@@ -16,8 +19,7 @@ public class VistaListadoGeneral extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
 
-        DefaultTableModel model = new DefaultTableModel();
-        JTable table = new JTable(model);
+        
 
         // Columnas al modelo
         model.addColumn("ID");
@@ -26,6 +28,7 @@ public class VistaListadoGeneral extends JFrame {
         model.addColumn("Correo");
         model.addColumn("Check-In");
         model.addColumn("Check-Out");
+        model.addColumn("Estado");
 
         table.setDefaultEditor(Object.class, null);
 

@@ -13,6 +13,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import modelo.ModeloListadoGeneral;
 import vista.VistaEstadisticas;
 import vista.VistaListadoFecha;
 import vista.VistaListadoGeneral;
@@ -33,6 +34,8 @@ public class ControladorListados {
             public void actionPerformed(ActionEvent e) {
                 VistaListadoGeneral obj_general = new VistaListadoGeneral();
                 ControladorListadoGeneral obj_gen = new ControladorListadoGeneral(obj_general);
+                ModeloListadoGeneral obj_modelo = new ModeloListadoGeneral(obj_general);
+                obj_modelo.obtenerDatos();
                 obj_general.setVisible(true);
                 obj_vista_graficos.setVisible(false);
             }

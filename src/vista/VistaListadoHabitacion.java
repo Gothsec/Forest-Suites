@@ -21,6 +21,12 @@ public class VistaListadoHabitacion extends JFrame {
     
     public ImageIcon icono_volver;
     public JButton boton_volver, boton_buscar;
+    
+    public String[] tiposDeHabitacion = {"Suite", "Doble", "Matrimonial", "Individual"};
+    public JComboBox<String> comboBox = new JComboBox<>(tiposDeHabitacion);
+           
+    public DefaultTableModel model = new DefaultTableModel();
+    public JTable table = new JTable(model);
 
     public VistaListadoHabitacion() {
         setTitle("Listado de Clientes por Tipo de Habitación");
@@ -28,9 +34,6 @@ public class VistaListadoHabitacion extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
-
-        DefaultTableModel model = new DefaultTableModel();
-        JTable table = new JTable(model);
 
         // Columnas al modelo
         model.addColumn("ID");
@@ -44,8 +47,6 @@ public class VistaListadoHabitacion extends JFrame {
         JPanel panel = new JPanel();
 
         JLabel label = new JLabel("Seleccionar Tipo de Habitación:");
-        String[] tiposDeHabitacion = {"Suite", "Doble", "Matrimonial", "Individual"};
-        JComboBox<String> comboBox = new JComboBox<>(tiposDeHabitacion);
         boton_buscar = new JButton("Buscar");
         
                 
