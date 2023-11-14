@@ -58,11 +58,9 @@ public class ControladorCrear {
         obj_vista_crear.boton_volver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VistaMenuPrincipal obj_vistamenu = new VistaMenuPrincipal();
-                ControladorMenuPrincipal obj_controladormenu = new ControladorMenuPrincipal(obj_vistamenu);
+                obj_menu.setVisible(true);
                 obj_vista_crear.setVisible(false);
                 obj_vista_crear.dispose();
-                
             }
         });
     }

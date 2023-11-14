@@ -16,12 +16,14 @@ import java.awt.event.ActionListener;
 import modelo.ModeloListadoFecha;
 import vista.VistaListadoFecha;
 import vista.VistaListados;
+import vista.VistaMenuPrincipal;
 
 public class ControladorListadoFecha {
-    
+    VistaMenuPrincipal obj_vista_menu;
     VistaListadoFecha obj_vista_graficos;
     
-    public ControladorListadoFecha (VistaListadoFecha obj_vista_graficos) {
+    public ControladorListadoFecha (VistaMenuPrincipal obj_vista_menu,VistaListadoFecha obj_vista_graficos) {
+        this.obj_vista_menu = obj_vista_menu;
         this.obj_vista_graficos= obj_vista_graficos;
 
         obj_vista_graficos.buscarButton.addActionListener(new ActionListener() {
@@ -36,7 +38,7 @@ public class ControladorListadoFecha {
             @Override
             public void actionPerformed(ActionEvent e) {
                 VistaListados obj_vista_est = new VistaListados();
-                ControladorListados obj_controlador_est = new ControladorListados(obj_vista_est);
+                ControladorListados obj_controlador_est = new ControladorListados(obj_vista_menu,obj_vista_est);
                 obj_vista_graficos.setVisible(false);
                 obj_vista_graficos.dispose();
             }

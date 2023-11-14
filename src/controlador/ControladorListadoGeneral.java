@@ -15,12 +15,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import vista.VistaListadoGeneral;
 import vista.VistaListados;
+import vista.VistaMenuPrincipal;
 
 public class ControladorListadoGeneral {
-    
+    VistaMenuPrincipal obj_vista_menu;
     VistaListadoGeneral obj_vista_graficos;
     
-    public ControladorListadoGeneral (VistaListadoGeneral obj_vista_graficos) {
+    public ControladorListadoGeneral (VistaMenuPrincipal obj_vista_menu,VistaListadoGeneral obj_vista_graficos) {
+        this.obj_vista_menu = obj_vista_menu;
         this.obj_vista_graficos= obj_vista_graficos;
 
 
@@ -28,7 +30,7 @@ public class ControladorListadoGeneral {
             @Override
             public void actionPerformed(ActionEvent e) {
                 VistaListados obj_vista_est = new VistaListados();
-                ControladorListados obj_controlador_est = new ControladorListados(obj_vista_est);
+                ControladorListados obj_controlador_est = new ControladorListados(obj_vista_menu,obj_vista_est);
                 obj_vista_graficos.setVisible(false);
                 obj_vista_graficos.dispose();
             }

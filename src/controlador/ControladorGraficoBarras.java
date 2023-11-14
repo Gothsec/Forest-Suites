@@ -24,7 +24,7 @@ public class ControladorGraficoBarras {
     VistaMenuPrincipal obj_menu;
     VistaGraficoBarras obj_vista_graficos;
     
-    public ControladorGraficoBarras (VistaGraficoBarras obj_vista_graficos) {
+    public ControladorGraficoBarras (VistaMenuPrincipal obj_menu,VistaGraficoBarras obj_vista_graficos) {
         this.obj_menu = obj_menu;
         this.obj_vista_graficos= obj_vista_graficos;
 
@@ -33,7 +33,7 @@ public class ControladorGraficoBarras {
             @Override
             public void actionPerformed(ActionEvent e) {
                 VistaEstadisticas obj_vista_est = new VistaEstadisticas();
-                ControladorEstadisticas obj_controlador_est = new ControladorEstadisticas(obj_vista_est);
+                ControladorEstadisticas obj_controlador_est = new ControladorEstadisticas(obj_menu,obj_vista_est);
                 obj_vista_graficos.setVisible(false);
                 obj_vista_graficos.dispose();
             }

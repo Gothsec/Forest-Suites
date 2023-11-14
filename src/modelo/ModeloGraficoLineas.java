@@ -1,15 +1,12 @@
 package modelo;
-// faltan comentarios
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import conexion_base.Conexion;
 import org.jfree.data.category.DefaultCategoryDataset;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class ModeloGraficoLineas {
 
@@ -17,36 +14,60 @@ public class ModeloGraficoLineas {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-        Map<String, Map<String, Integer>> data = new HashMap<>();
+        Conexion objConexion = new Conexion();
+        boolean errorConexion = objConexion.conectarMySQL("forest_suites_db", "root", "", "127.0.0.1");
 
-        try (BufferedReader br = new BufferedReader(new FileReader("datos.csv"))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] parts = line.split(";");
-                if (parts.length == 6) {
-                    Date checkinDate = dateFormat.parse(parts[4].trim());
-                    String roomType = parts[2].trim();
-                    String month = new SimpleDateFormat("MMMM yyyy").format(checkinDate);
+        if (!errorConexion) {
+            try {
+                Map<String, Map<String, Integer>> data = new HashMap<>();
+
+                // Obtener datos directamente de la base de datos
+                String sql = "SELECT * FROM cliente";
+                ResultSet rs = objConexion.consulta(sql);
+
+                // Inicializar el conjunto de meses
+                Set<String> allMonths = new HashSet<>(Arrays.asList("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"));
+
+                while (rs.next()) {
+                    String checkinString = rs.getString("checkin");
+                    String roomType = rs.getString("habitacion");
+                    String month = formatDate(checkinString);
 
                     if (!data.containsKey(roomType)) {
                         data.put(roomType, new HashMap<>());
                     }
 
                     Map<String, Integer> roomTypeData = data.get(roomType);
-                    roomTypeData.put(month, roomTypeData.getOrDefault(month, 0) + 1);
-                }
-            }
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
 
-        for (Map.Entry<String, Map<String, Integer>> entry : data.entrySet()) {
-            Map<String, Integer> roomTypeData = entry.getValue();
-            for (Map.Entry<String, Integer> monthData : roomTypeData.entrySet()) {
-                dataset.addValue(monthData.getValue(), entry.getKey(), monthData.getKey());
+                    // Asegurar que todos los meses estén representados, incluso si no hay reservas
+                    for (String singleMonth : allMonths) {
+                        roomTypeData.put(singleMonth, roomTypeData.getOrDefault(singleMonth, 0));
+                    }
+
+                    // Incrementar la cantidad de reservas para el mes actual
+                    roomTypeData.put(month, roomTypeData.get(month) + 1);
+                }
+
+                for (Map.Entry<String, Map<String, Integer>> entry : data.entrySet()) {
+                    Map<String, Integer> roomTypeData = entry.getValue();
+                    for (Map.Entry<String, Integer> monthData : roomTypeData.entrySet()) {
+                        dataset.addValue(monthData.getValue(), entry.getKey(), monthData.getKey());
+                    }
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                objConexion.desconectar();
             }
         }
 
         return dataset;
+    }
+
+    private String formatDate(String dateString) {
+        // Puedes implementar la lógica de formato según sea necesario
+        // En este ejemplo, se devuelve el mes en formato MM
+        return new SimpleDateFormat("MM").format(new Date(dateString));
     }
 }

@@ -53,19 +53,11 @@ public class ModeloCrearUsuario {
 
             if (!errorGuardado) {
                 JOptionPane.showMessageDialog(null, "Usuario creado exitosamente");
-            }
-
-            int resp = JOptionPane.showConfirmDialog(null, "¿Desea guardar otra reservación?", "Confirmación",
-                    JOptionPane.YES_NO_OPTION);
-            if (resp == JOptionPane.YES_OPTION) {
                 objVista.textfield_nombre.setText("");
                 objVista.textfield_contraseña.setText("");
-            } else {
-                VistaCrear obj_crear = new VistaCrear();
-                obj_crear.setVisible(true);
-                objVista.setVisible(false);
-                objVista.dispose();
+                objVista.comboBoxTipo.setSelectedIndex(0);
             }
+
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al interactuar con la base de datos");

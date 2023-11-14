@@ -58,6 +58,9 @@ public class ModeloCrearCliente {
         boolean errorConexion = con.conectarMySQL("forest_suites_db", "root", "", "127.0.0.1");
 
         if (!errorConexion) {
+            int id = ++contadorid;
+            //String str_id = id + "";
+            //objVista.textFieldId.setText(str_id);
             String nombre = objVista.textFieldNombre.getText();
             String correo = objVista.textFieldEmail.getText();
             String habitacion = objVista.comboBoxHabitacion.getSelectedItem().toString();
@@ -65,25 +68,21 @@ public class ModeloCrearCliente {
             String checkout = objVista.textFieldCheckout.getText();
 
         try {
-            int id = ++contadorid;
+            
             String[] datos = { String.valueOf(id), nombre, correo, habitacion, checkin, checkout, "activo" };
             boolean errorGuardado = con.insertar("cliente", datos);
 
             if (!errorGuardado) {
                 JOptionPane.showMessageDialog(null, "Reservación guardada exitosamente");
-            }
-
-            int resp = JOptionPane.showConfirmDialog(null, "¿Desea guardar otra reservación?", "Confirmación",
-                    JOptionPane.YES_NO_OPTION);
-            if (resp == JOptionPane.YES_OPTION) {
+                objVista.textFieldId.setText("");
                 objVista.textFieldNombre.setText("");
                 objVista.textFieldEmail.setText("");
+                objVista.comboBoxHabitacion.setSelectedIndex(0);
                 objVista.textFieldCheckin.setText("");
-                objVista.textFieldCheckout.setText("");
-            } else {
-                VistaCrear obj_crear = new VistaCrear();
-                objVista.setVisible(false);
+                        objVista.textFieldCheckout.setText("");
             }
+
+        
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al interactuar con la base de datos");

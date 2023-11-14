@@ -26,14 +26,14 @@ public class ControladorListados {
     VistaMenuPrincipal obj_menu;
     VistaListados obj_vista_graficos;
     
-    public ControladorListados (VistaListados obj_vista_graficos) {
+    public ControladorListados (VistaMenuPrincipal obj_menu, VistaListados obj_vista_graficos) {
         this.obj_menu = obj_menu;
         this.obj_vista_graficos= obj_vista_graficos;
 
         obj_vista_graficos.btnListadoGeneral.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 VistaListadoGeneral obj_general = new VistaListadoGeneral();
-                ControladorListadoGeneral obj_gen = new ControladorListadoGeneral(obj_general);
+                ControladorListadoGeneral obj_gen = new ControladorListadoGeneral(obj_menu,obj_general);
                 ModeloListadoGeneral obj_modelo = new ModeloListadoGeneral(obj_general);
                 obj_modelo.obtenerDatos();
                 obj_general.setVisible(true);
@@ -53,7 +53,7 @@ public class ControladorListados {
         obj_vista_graficos.btnListadoFecha.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 VistaListadoFecha obj_vistafecha = new VistaListadoFecha();
-                ControladorListadoFecha obj_fecha = new ControladorListadoFecha(obj_vistafecha);
+                ControladorListadoFecha obj_fecha = new ControladorListadoFecha(obj_menu,obj_vistafecha);
                 obj_vista_graficos.setVisible(false);
             }
         });
@@ -61,8 +61,7 @@ public class ControladorListados {
         obj_vista_graficos.boton_volver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VistaMenuPrincipal obj_vistamenu = new VistaMenuPrincipal();
-                ControladorMenuPrincipal obj_controladormenu = new ControladorMenuPrincipal(obj_vistamenu);
+                obj_menu.setVisible(true);
                 obj_vista_graficos.setVisible(false);
                 obj_vista_graficos.dispose();
             }

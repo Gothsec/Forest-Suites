@@ -20,7 +20,7 @@ public class VistaAcerca extends JFrame {
                   label_icono_alejo, label_icono_oscar, label_icono_camilo,
                   label_codigo_alejo, label_codigo_oscar, label_codigo_camilo;
     public JButton boton_volver;
-    public ImageIcon icono_volver, icono_alejo, icono_oscar, icono_camilo;
+    public ImageIcon icono_volver, icono_oscar, icono_camilo, icono_alejo;
     public JPanel panel_alejo, panel_oscar, panel_camilo, subpanel_alejo, subpanel_oscar, subpanel_camilo,
                   espacio_en_blanco_alejo, espacio_en_blanco_oscar, espacio_en_blanco_camilo;
                   
@@ -69,7 +69,7 @@ public class VistaAcerca extends JFrame {
         espacio_en_blanco_alejo.setSize(10, 70);
         // espacio_en_blanco.setBackground(Color.red);
         
-        icono_alejo = new ImageIcon(getClass().getResource("../iconos/icono-alejo.png"));
+        icono_alejo = new ImageIcon(getClass().getResource("../iconos/desarrollador.png"));
         label_icono_alejo = new JLabel(icono_alejo);
         
         label_alejo = new JLabel("Alejandro Cuenca");
@@ -114,7 +114,7 @@ public class VistaAcerca extends JFrame {
         espacio_en_blanco_oscar = new JPanel();
         espacio_en_blanco_oscar.setSize(10, 70);
         
-        icono_oscar = new ImageIcon(getClass().getResource("../iconos/icono-oscar.png"));
+        icono_oscar = new ImageIcon(getClass().getResource("../iconos/desarrollador.png"));
         label_icono_oscar = new JLabel(icono_oscar);
         
         label_oscar = new JLabel("Oscar Hernandez");
@@ -159,7 +159,7 @@ public class VistaAcerca extends JFrame {
         espacio_en_blanco_camilo = new JPanel();
         espacio_en_blanco_camilo.setSize(10, 70);
         
-        icono_camilo = new ImageIcon(getClass().getResource("../iconos/icono-camilo.png"));
+        icono_camilo = new ImageIcon(getClass().getResource("../iconos/desarrollador.png"));
         label_icono_camilo = new JLabel(icono_camilo);
         
         label_camilo = new JLabel("Camilo Garcia");

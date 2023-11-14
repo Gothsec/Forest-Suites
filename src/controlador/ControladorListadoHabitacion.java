@@ -40,7 +40,7 @@ public class ControladorListadoHabitacion {
             @Override
             public void actionPerformed(ActionEvent e) {
                 VistaListados obj_vista_est = new VistaListados();
-                ControladorListados obj_controlador_est = new ControladorListados(obj_vista_est);
+                ControladorListados obj_controlador_est = new ControladorListados(obj_menu,obj_vista_est);
                 obj_vista_graficos.setVisible(false);
                 obj_vista_graficos.dispose();
             }

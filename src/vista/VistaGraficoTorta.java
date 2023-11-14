@@ -1,14 +1,3 @@
-/* Forest Suites es una app hecha en Java para la gestion de
-reservas en un hotel, con opciones de crear, modificar y buscar.
-
-Oscar Andres Hernandez Pineda - 2264488
-Camilo Andres Garcia - 2264484
-Alejandro Cuenca - 22644755
-
-Ult. fecha modificacion: 20/10/2023
-Version 2.0
-*/
-
 package vista;
 
 import org.jfree.chart.ChartFactory;
@@ -17,20 +6,18 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
 
+import javax.swing.*;
 import java.awt.Color;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import modelo.ModeloGraficoTorta;
 import org.jfree.chart.labels.PieSectionLabelGenerator;
 import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
 
 public class VistaGraficoTorta extends JFrame {
 
     JFreeChart chart;
-    public ImageIcon icono_volver; 
+    public ImageIcon icono_volver;
     public JButton boton_volver;
 
     public VistaGraficoTorta() {
@@ -45,7 +32,7 @@ public class VistaGraficoTorta extends JFrame {
         ChartPanel panel = new ChartPanel(chart, false);
         panel.setBounds(10, 20, 760, 520);
         add(panel);
-        
+
         icono_volver = new ImageIcon(getClass().getResource("../iconos/icono-volver.png"));
         boton_volver = new JButton(icono_volver);
         boton_volver.setBackground(Color.white);
@@ -56,44 +43,8 @@ public class VistaGraficoTorta extends JFrame {
     }
 
     public void crearGrafico() {
-        DefaultPieDataset data = new DefaultPieDataset();
-        int contadorSuite = 0;
-        int contadorMatrimonial = 0;
-        int contadorIndividual = 0;
-        int contadorDoble = 0;
-
-        try (BufferedReader br = new BufferedReader(new FileReader("datos.csv"))) { //pendiente para base de datos
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                String[] parts = line.split(";");
-                if (parts.length >= 3) {
-                    String tipoHabitacion = parts[2].trim();
-                    // Incrementar el contador para el tipo de habitación
-                    switch (tipoHabitacion) {
-                        case "Suite":
-                            contadorSuite++;
-                            break;
-                        case "Matrimonial":
-                            contadorMatrimonial++;
-                            break;
-                        case "Individual":
-                            contadorIndividual++;
-                            break;
-                        case "Doble":
-                            contadorDoble++;
-                            break;
-                    }
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        data.setValue("Suite", contadorSuite);
-        data.setValue("Matrimonial", contadorMatrimonial);
-        data.setValue("Individual", contadorIndividual);
-        data.setValue("Doble", contadorDoble);
+        ModeloGraficoTorta modelo = new ModeloGraficoTorta();
+        DefaultPieDataset data = modelo.getData();
 
         chart = ChartFactory.createPieChart(
                 "Cantidad de tipos de habitación ocupadas",
@@ -109,11 +60,11 @@ public class VistaGraficoTorta extends JFrame {
 
         PiePlot plot = (PiePlot) chart.getPlot();
         plot.setBackgroundPaint(Color.WHITE);
-        
+
         PieSectionLabelGenerator labelGenerator = new StandardPieSectionLabelGenerator(
-            "{0}: {1} ({2})",  // Formato: {0} es la clave (nombre), {1} es el valor, {2} es el porcentaje
-            new java.text.DecimalFormat("0"),  // Formato del valor
-            new java.text.DecimalFormat("0.00%") // Formato del porcentaje
+                "{0}: {1} ({2})",  // Formato: {0} es la clave (nombre), {1} es el valor, {2} es el porcentaje
+                new java.text.DecimalFormat("0"),  // Formato del valor
+                new java.text.DecimalFormat("0.00%") // Formato del porcentaje
         );
         plot.setLabelGenerator(labelGenerator);
     }
