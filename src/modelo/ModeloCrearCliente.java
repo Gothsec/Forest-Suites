@@ -32,8 +32,8 @@ import java.sql.SQLException;
 public class ModeloCrearCliente {
     
     VistaCrearCliente objVista;
-    private static int contadorid = 0;
-    private int id;
+    public static int contadorid = 0;
+    public int id;
     
     public ModeloCrearCliente(VistaCrearCliente objVista){
         this.objVista = objVista;
@@ -58,9 +58,7 @@ public class ModeloCrearCliente {
         boolean errorConexion = con.conectarMySQL("forest_suites_db", "root", "", "127.0.0.1");
 
         if (!errorConexion) {
-            int id = ++contadorid;
-            //String str_id = id + "";
-            //objVista.textFieldId.setText(str_id);
+
             String nombre = objVista.textFieldNombre.getText();
             String correo = objVista.textFieldEmail.getText();
             String habitacion = objVista.comboBoxHabitacion.getSelectedItem().toString();
@@ -68,7 +66,8 @@ public class ModeloCrearCliente {
             String checkout = objVista.textFieldCheckout.getText();
 
         try {
-            
+            int id = obtenerID();
+            id++;
             String[] datos = { String.valueOf(id), nombre, correo, habitacion, checkin, checkout, "activo" };
             boolean errorGuardado = con.insertar("cliente", datos);
 
@@ -92,5 +91,28 @@ public class ModeloCrearCliente {
         }
     }
 }
+    
+    public int obtenerID() {
+        Conexion con = new Conexion();
+        boolean errorConexion = con.conectarMySQL("forest_suites_db", "root", "", "127.0.0.1");
+        int _id = 0;
+        if (!errorConexion) {
+            try {
+                String[][] numeroClientes = con.consultaMatrizAll("cliente");
+                
+                for (String[] fila : numeroClientes) {
+                   _id++;
+                }
+                return ++_id;
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error al interactuar con la base de datos");
+                e.printStackTrace();
+            } finally {
+                con.desconectar();
+            }
+        }
+        return _id;
+    }
 
 }

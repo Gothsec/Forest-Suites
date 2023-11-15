@@ -41,6 +41,8 @@ public class ControladorCrear {
             public void actionPerformed(ActionEvent e) {
                 obj_vista_crearcliente = new VistaCrearCliente(obj_menu);
                 ControladorCrearCliente obj_controlador_crearcliente = new ControladorCrearCliente(obj_vista_crear, obj_vista_crearcliente);
+                ModeloCrearCliente obj_modelo = new ModeloCrearCliente(obj_vista_crearcliente);
+                obj_vista_crearcliente.textFieldId.setText(obj_modelo.obtenerID()+"");
                 obj_vista_crear.setVisible(false);
             }
         });

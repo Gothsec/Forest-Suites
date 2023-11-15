@@ -44,7 +44,7 @@ public class ControladorListados {
         obj_vista_graficos.btnListadoHabitacion.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
               VistaListadoHabitacion obj_habitacion = new VistaListadoHabitacion();
-              ControladorListadoHabitacion obj_hab = new ControladorListadoHabitacion(obj_habitacion);
+              ControladorListadoHabitacion obj_hab = new ControladorListadoHabitacion(obj_menu,obj_habitacion);
               obj_habitacion.setVisible(true);
               obj_vista_graficos.setVisible(false);
             }
